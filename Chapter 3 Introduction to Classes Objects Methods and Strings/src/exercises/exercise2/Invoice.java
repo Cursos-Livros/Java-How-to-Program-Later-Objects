@@ -1,28 +1,31 @@
 package exercises.exercise2;
 
 class Invoice {
-    private String number;
+    private Integer number;
     private String description;
     private Integer itemQuantity;
     private Double price;
 
-    public Invoice(Integer itemQuantity) {
+    public Invoice(Integer number, String description, Integer itemQuantity, Double price) {
+        this.number = number;
+        this.description = description;
         this.itemQuantity = itemQuantity;
+        this.price = price;
 
         if (itemQuantity < 0) {
-            itemQuantity = 0;
+            this.itemQuantity = 0;
         }
 
         if (price < 0.0) {
-            price = 0.0;
+            this.price = 0.0;
         }
     }
 
-    public String getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(Integer number) {
         this.number = number;
     }
 
@@ -50,7 +53,8 @@ class Invoice {
         this.price = price;
     }
 
-    public Double getInvoiceMethod() {
+    public Double invoiceAmmount() {
         return itemQuantity * price;
     }
+
 }

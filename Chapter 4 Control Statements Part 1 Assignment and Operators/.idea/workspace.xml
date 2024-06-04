@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise18/CreditLimit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise18/CreditLimitCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise19/SalesCommission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise19/SalesCommissionCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise20/Salary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise20/SalaryCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chapter 3 Introduction to Classes Objects Methods and Strings/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 3 Introduction to Classes Objects Methods and Strings/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chapter 3 Introduction to Classes Objects Methods and Strings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 3 Introduction to Classes Objects Methods and Strings/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/GasMileage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/exercise17/GasMileage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/GasMileageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/exercise17/GasMileageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/José Augusto/Documents/Java-How-to-Program-Later-Objects/Chapter 4 Control Statements Part 1 Assignment and Operators",
+    "last_opened_file_path": "C:/Users/JV/Documents/Desenvolvimento/Java-criando-a-sua-primeira-aplicacac",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>

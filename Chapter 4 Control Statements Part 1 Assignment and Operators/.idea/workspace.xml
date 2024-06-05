@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise22/FindTwoLargestNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/Exercise29/SquareAsterisks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +40,7 @@
     "Application.GasMileageTest.executor": "Run",
     "Application.SalaryCalculator.executor": "Debug",
     "Application.SalesCommissionCalculator.executor": "Run",
+    "Application.SquareAsterisks.executor": "Run",
     "Application.StudentTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -83,11 +84,6 @@
           <url>file://$PROJECT_DIR$/src/exercises/exercise20/Salary.java</url>
           <line>48</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/exercises/exercise22/FindTwoLargestNumbers.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

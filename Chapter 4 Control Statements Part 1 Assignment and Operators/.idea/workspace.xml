@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise30/Palindromes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise31/DecimalBinaryNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercises/exercise31/DecimalBinaryNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/exercise31/DecimalBinaryNumber.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +35,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.CreditLimitCalculator.executor": "Run",
+    "Application.DecimalBinaryNumber.executor": "Run",
     "Application.FindLargestNumber.executor": "Run",
     "Application.FindTwoLargestNumbers.executor": "Run",
     "Application.GasMileageTest.executor": "Run",
@@ -48,7 +46,7 @@
     "Application.StudentTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/José Augusto/Documents/Java-Aplicando-Orientacao-Objetos/2887-java-screenmatch-oo",
     "settings.editor.selected.configurable": "preferences.sourceCode"

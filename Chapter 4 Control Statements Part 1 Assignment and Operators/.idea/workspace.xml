@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise36/CreatingComparator.java" afterDir="false" />
-    </list>
+    <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +34,7 @@
     "Application.CreatingComparator.executor": "Run",
     "Application.CreditLimitCalculator.executor": "Run",
     "Application.DecimalBinaryNumber.executor": "Run",
+    "Application.Exercise17.executor": "Run",
     "Application.FindLargestNumber.executor": "Run",
     "Application.FindTwoLargestNumbers.executor": "Run",
     "Application.GasMileageTest.executor": "Run",

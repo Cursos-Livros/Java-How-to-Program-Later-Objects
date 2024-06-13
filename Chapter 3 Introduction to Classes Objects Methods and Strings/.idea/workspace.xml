@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d88d7e1a-757d-4ffb-b2cc-f71ef09d06b1" name="Changes" comment="" />
+    <list default="true" id="d88d7e1a-757d-4ffb-b2cc-f71ef09d06b1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/José Augusto/Documents/Java-How-to-Program-Later-Objects/Chapter 4 Control Statements Part 1 Assignment and Operators"
+    "last_opened_file_path": "C:/Users/JV/Documents/Desenvolvimento/Lista Exercicio POO Uem"
   }
 }]]></component>
   <component name="RecentsManager">

@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercises/exercise34/ReadingNumbersSpecifiedSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/exercise36/CreatingComparator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CreatingComparator.executor": "Run",
     "Application.CreditLimitCalculator.executor": "Run",
     "Application.DecimalBinaryNumber.executor": "Run",
     "Application.FindLargestNumber.executor": "Run",

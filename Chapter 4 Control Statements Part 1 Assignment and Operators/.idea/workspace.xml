@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercises/exercise31/DecimalBinaryNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercises/exercise31/DecimalBinaryNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercises/exercise34/ReadingNumbersSpecifiedSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,7 @@
     "Application.FindTwoLargestNumbers.executor": "Run",
     "Application.GasMileageTest.executor": "Run",
     "Application.Palindromes.executor": "Run",
+    "Application.ReadingNumbersSpecifiedSum.executor": "Run",
     "Application.SalaryCalculator.executor": "Debug",
     "Application.SalesCommissionCalculator.executor": "Run",
     "Application.SquareAsterisks.executor": "Run",
@@ -86,6 +86,11 @@
           <url>file://$PROJECT_DIR$/src/exercises/exercise20/Salary.java</url>
           <line>48</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercises/exercise32/DecimalBinaryNumber.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

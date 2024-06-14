@@ -19,7 +19,7 @@ public class CreatingComparator {
         } else if (number1 > number2) {
             System.out.println(1);
         } else {
-            System.out.println(-1);
+            System.out.println(2);
         }
     }
 }

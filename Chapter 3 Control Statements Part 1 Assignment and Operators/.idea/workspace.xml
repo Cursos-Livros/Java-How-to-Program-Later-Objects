@@ -5,8 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3350a666-5de9-4e4a-b57d-51f41da2bc84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statemens Part 2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 4 Control Statemens Part 2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statemens Part 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 4 Control Statemens Part 2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/Chapter 3 Control Statements Part 1 Assignment and Operators.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/examples/example1/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/examples/example1/StudentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/Exercise29/SquareAsterisks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise17/GasMileage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise17/GasMileageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise18/CreditLimit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise18/CreditLimitCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise19/SalesCommission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise19/SalesCommissionCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise20/Salary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise20/SalaryCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise21/FindLargestNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise22/FindTwoLargestNumbers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise30/Palindromes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise32/DecimalBinaryNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise34/ReadingNumbersSpecifiedSum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise36/CreatingComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise38/Factorial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statements Part 1 Assignment and Operators/src/exercises/exercise39/PrivacyCryptography.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +83,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/JV/Documents/Desenvolvimento/Java-Aplicando-Orientacao-Objetos/2887-java-screenmatch-oo",
+    "last_opened_file_path": "C:/Users/JV/Documents/Desenvolvimento/Java-How-to-Program-Later-Objects/Chapter 4 Control Statemens Part 2",
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>

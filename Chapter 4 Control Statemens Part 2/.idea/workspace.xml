@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="74cabb2f-e8fe-4788-8778-da5345e7da7d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercise/exercise14/ModifiedCompoundInterestProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise/exercise14/ModifiedCompoundInterestProgram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +36,7 @@
   "keyToString": {
     "Application.Extreme.executor": "Run",
     "Application.IntegerDivisible3.executor": "Run",
+    "Application.ModifiedCompoundInterestProgram.executor": "Run",
     "Application.SumSerie.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",

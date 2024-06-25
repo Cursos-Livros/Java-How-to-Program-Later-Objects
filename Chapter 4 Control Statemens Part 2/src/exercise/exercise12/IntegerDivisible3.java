@@ -6,13 +6,16 @@ public class IntegerDivisible3 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter number:");
-        int number = input.nextInt();
+        int sum = 0;
 
-        if (number % 3 == 0) {
-            System.out.println("Is divisible!");
-        }else{
-            System.out.println("Is not divisible!");
+        // 3,6,9
+        for (int i = 0; i < 30; i++) {
+            if (i % 3 == 0) {
+                sum += i;
+            }
         }
+
+        System.out.println("Total: " +  sum);
+
     }
 }

@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74cabb2f-e8fe-4788-8778-da5345e7da7d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Chapter 3 Control Statements Part 1 Assignment and Operators/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 3 Control Statements Part 1 Assignment and Operators/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chapter 3 Control Statements Part 1 Assignment and Operators/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 3 Control Statements Part 1 Assignment and Operators/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercise/exercise14/ModifiedCompoundInterestProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise/exercise14/ModifiedCompoundInterestProgram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +39,12 @@
     "Application.IntegerDivisible3.executor": "Run",
     "Application.ModifiedCompoundInterestProgram.executor": "Run",
     "Application.SumSerie.executor": "Run",
+    "Application.TrianglePrintingProgram.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/José Augusto/Documents/Java-How-to-Program-Later-Objects/Chapter 4 Control Statemens Part 2",
+    "last_opened_file_path": "C:/Users/José Augusto/Documents/Java-How-to-Program-Later-Objects/Chapter 3 Control Statements Part 1 Assignment and Operators",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
@@ -61,5 +63,16 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercise/exercise14/ModifiedCompoundInterestProgram.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package exercise.exercise21;
+package exercise.exercise22;
 
 public class PytaghoreanTriples {
     public static void main(String[] args) {

@@ -18,6 +18,7 @@ public class CalculatinValuePI {
             }
             denominator += 2;
             System.out.println(result);
+
         }
     }
 }

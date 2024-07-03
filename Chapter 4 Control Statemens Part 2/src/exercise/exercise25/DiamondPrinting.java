@@ -3,7 +3,6 @@ package exercise.exercise25;
 public class DiamondPrinting {
     public static void main(String[] args) {
         int number = 5;
-cd ..
         for (int line = 1; line <= number; line++) {
 
             for (int row = 1; row <= number - line; row++) {

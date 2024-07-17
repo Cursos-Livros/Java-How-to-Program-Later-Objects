@@ -8,15 +8,27 @@ public class Exercise37ComputerAssistedInstructionMonitoringStudentPerformance {
         SecureRandom randomNumbers = new SecureRandom();
         Scanner input = new Scanner(System.in);
 
-//        System.out.println("Choose the difficulty");
-//        int difficultyOption = input.nextInt();
-//
-//        while(!checkDifficulty(difficultyOption)){
-//
-//        }
+        System.out.println("Choose the difficulty");
+        System.out.println("1 for integer 1 digit:");
+        System.out.println("2 for integer 2 digit:");
+        int difficultyOption = input.nextInt();
 
-        int number1 = 1 + randomNumbers.nextInt(10);
-        int number2 = 1 + randomNumbers.nextInt(10);
+        while (!checkDifficulty(difficultyOption)) {
+            difficultyOption = difficultyError(input);
+            checkDifficulty(difficultyOption);
+        }
+
+        int number1 = 0;
+        int number2 = 0;
+
+        if (difficultyOption == 1) {
+            number1 = randomNumbers1Digit(randomNumbers);
+            number2 = randomNumbers1Digit(randomNumbers);
+        }else{
+            number1 = randomNumbers2Digit(randomNumbers);
+            number2 = randomNumbers2Digit(randomNumbers);
+        }
+
 
         System.out.println("How much is " + number1 + " times " + number2);
 
@@ -42,11 +54,28 @@ public class Exercise37ComputerAssistedInstructionMonitoringStudentPerformance {
         input.close();
     }
 
+    public static boolean checkDifficulty(int difficultOption) {
+        return difficultOption == 1 || difficultOption == 2;
+    }
+
+    public static int difficultyError(Scanner input) {
+        System.out.println("Enter the option difficult again:");
+        int option = input.nextInt();
+
+        return option;
+    }
+
+    public static int randomNumbers1Digit(SecureRandom randomNumbers) {
+        return 1 + randomNumbers.nextInt(9);
+    }
+
+    public static int randomNumbers2Digit(SecureRandom randomNumbers) {
+        return 10 + randomNumbers.nextInt(100);
+    }
 
     public static boolean checkAnswer(int number1, int number2, int answer) {
         return (number1 * number2) == answer;
     }
-
 
     public static void chaterringError() {
         SecureRandom randomNumbers = new SecureRandom();
@@ -88,10 +117,10 @@ public class Exercise37ComputerAssistedInstructionMonitoringStudentPerformance {
         }
     }
 
-    public static void  report(int countRight, int countError){
+    public static void report(int countRight, int countError) {
         double percetageError = ((double) countError / 10) * 100;
 
-        if(percetageError >= 75.0){
+        if (percetageError >= 75.0) {
             System.out.println("Please ask your teacher for extra help.");
         } else {
             System.out.println("Congratulations, you are ready to go to the next level!");

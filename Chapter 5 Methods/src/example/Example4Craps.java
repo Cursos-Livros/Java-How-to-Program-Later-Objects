@@ -8,7 +8,9 @@ public class Example4Craps {
 
     // Tipo especial da classe para declarar varia constantes
     // enum type with constants that represent the game status
-    private enum Status {CONTINUE, WON, LOST};
+    private enum Status {CONTINUE, WON, LOST}
+
+    ;
 
     // constants that represent common rolls of the dice
     private static final int SNAKE_EYES = 2;
@@ -57,16 +59,15 @@ public class Example4Craps {
         }
 
         // display won or lost message
-        if ( gameStatus == Status.WON) {
+        if (gameStatus == Status.WON) {
             System.out.println("Player wins");
-        }
-        else {
+        } else {
             System.out.println("Player loses");
         }
     }
 
     // roll dice, calculate sum and display results
-    public static int rollDice(){
+    public static int rollDice() {
         // pick random die values
         int die1 = 1 + randomNumbers.nextInt(6);
         int die2 = 1 + randomNumbers.nextInt(6);

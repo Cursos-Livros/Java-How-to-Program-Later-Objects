@@ -6,20 +6,12 @@ public class AccountTest {
     public static void main(String[] args) {
         Scanner input= new Scanner(System.in);
 
-        // cria um objeto account e atribui a myAccount
-        Account myAccount =  new Account();
+        // cria 2 objetos Account
+        Account account1 =  new Account("Jane Green");
+        Account account2 = new Account("Jhon Blue");
 
-        // display o valor inicial como null
-        System.out.printf("Initial name is %s:%n", myAccount.getName());
-
-        // prompt for e de leitura
-        System.out.println("Please enter the name: ");
-        String name = input.nextLine();
-        myAccount.setName(name);
-        System.out.println();
-
-        // mostra o nome guardado no objeto myAccount
-        System.out.printf("Name in object myAccount is:%n%s%n",myAccount.getName());
-
+        // mostra o valor inicial de cada objeto account
+        System.out.println("Account 1 name is: " + account1.getName());
+        System.out.println("Account 2 name is: " + account2.getName());
     }
 }

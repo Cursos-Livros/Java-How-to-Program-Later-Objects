@@ -32,48 +32,55 @@ public class GradeBook {
         System.out.println("Average"); // media do estudante
 
         // cria colunas e linhas de texto representando array notas
+
         for (int students = 0; students < grades.length; students++) {
             System.out.printf("Student %2d", students + 1);
 
-            for(int test: grades[students]){
+            for (int test : grades[students]) {
                 System.out.printf("%8d", test);
             }
+            // Mostra cada nota da tabela de notas
+            // Aqui se percorre apenas os campos da notas
+            // Se liga nas execucoes o metodo so sera chamado com valores
+            double average = getAverage(grades[students]);
+            System.out.printf("%9.2f%n", average);
         }
-
-        // Mostra cada nota da tabela de notas
-        double average = getAverage(grades[students]);
-        System.out.printf("%9.2f%n", average);g
     }
 
-    public double getAverage() {
+    // Aqui se torna necessario o parametro pois so assim e possivel receber apenas um dos conjuntos de nota
+    public double getAverage(int[] setOfGrades) {
         int total = 0;
 
-        for (int grade : grades) {
+        for (int grade : setOfGrades) {
             total += grade;
         }
 
         // Essa maneira de fazer a media e bem legal
         // usar o proprio tamanho do array por que ja e a quantidade de elementos
-        return (double) total / grades.length;
+        return (double) total / setOfGrades.length;
     }
 
     public int getMinimum() {
-        int lowGrade = grades[0];
+        int lowGrade = grades[0][0];
 
-        for (int grade : grades) {
-            if (grade < lowGrade) {
-                lowGrade = grade;
+        for (int[] studentGrades : grades) {
+            for (int grade : studentGrades) {
+                if (grade < lowGrade) {
+                    lowGrade = grade;
+                }
             }
         }
         return lowGrade;
     }
 
     public int getMaximum() {
-        int maximumGrade = grades[0];
+        int maximumGrade = grades[0][0];
 
-        for (int grade : grades) {
-            if (grade > maximumGrade) {
-                maximumGrade = grade;
+        for (int[] studentGrades : grades) {
+            for (int grade : studentGrades) {
+                if (grade > maximumGrade) {
+                    maximumGrade = grade;
+                }
             }
         }
         return maximumGrade;
@@ -85,11 +92,11 @@ public class GradeBook {
         // Array que guarda a frequencia que cada nota apareceu
         int[] frequency = new int[11];
 
-        // Este loop percorre nota por nota adicionando um na posicao da nota
-        // Exemplo se a nota na posicao[1] = 10 entao frequencia[10] = 1
-        // Nesse caso tanto faz se o ++ for colocado agora ou antes
-        for (int grade : grades) {
-            ++frequency[grade / 10];
+        // Para cada nota adicione um frequencia
+        for (int[] studentGrades : grades) {
+            for (int grade : studentGrades) {
+                ++frequency[grade / 10];
+            }
         }
 
         // Printa os *
@@ -118,13 +125,7 @@ public class GradeBook {
         outputGrades();
 
         // Chama o metodo get average para calcular a media das notas
-        System.out.printf("%nClass average is %.2f%n", getAverage());
-
-
-        // Chama o maximo e minimo
-        System.out.printf("Lowest grade is %d%nHighest grade is %d%n%n", getMinimum(), getMaximum());
-
-        // Mostra a barra de distribuicao das notas
+        System.out.printf("%n%s %d%n%s %d%n%n", "Lowest grade in the grade book is", getMinimum(), "Highest grade in the grade book is", getMaximum());
         outputBarChart();
     }
 }

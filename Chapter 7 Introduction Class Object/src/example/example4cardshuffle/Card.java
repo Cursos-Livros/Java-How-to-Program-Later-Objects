@@ -1,4 +1,4 @@
-package example4cardshuffle;
+package example.example4cardshuffle;
 
 public class Card {
     private final String face;

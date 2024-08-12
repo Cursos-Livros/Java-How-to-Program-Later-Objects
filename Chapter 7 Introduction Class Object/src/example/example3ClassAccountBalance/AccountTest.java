@@ -1,4 +1,4 @@
-package example3ClassAccountBalance;
+package example.example3ClassAccountBalance;
 
 import java.util.Scanner;
 

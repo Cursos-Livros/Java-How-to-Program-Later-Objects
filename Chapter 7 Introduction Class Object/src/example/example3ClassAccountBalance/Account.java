@@ -1,4 +1,4 @@
-package example2AccountConstructor;
+package example.example3ClassAccountBalance;
 
 /*
   Variaveis de Instancia
@@ -13,10 +13,14 @@ package example2AccountConstructor;
 
 public class Account {
     private String name;
+    private double balance;
 
     // construtor que inicializa name atraves do parametro name
-    public Account(String name){
+    public Account(String name, double balance) {
         this.name = name;
+        if (balance > 0.0) {
+            this.balance = balance;
+        }
     }
 
     public void setName(String name) {
@@ -25,5 +29,19 @@ public class Account {
 
     public String getName() {
         return name;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public void deposit(double depositAmount) {
+        if (depositAmount > 0.0) {
+            balance += depositAmount;
+        }
     }
 }

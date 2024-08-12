@@ -1,4 +1,4 @@
-package example6gradebooktwodimensions;
+package example.example6gradebooktwodimensions;
 
 public class GradeBook {
     private String courseName; // Guarda o nome do curso

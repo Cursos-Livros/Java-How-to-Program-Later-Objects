@@ -1,4 +1,4 @@
-package example4cardshuffle;
+package example.example4cardshuffle;
 
 import java.security.SecureRandom;
 

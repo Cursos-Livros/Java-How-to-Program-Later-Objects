@@ -1,4 +1,4 @@
-package example2AccountConstructor;
+package example.example2AccountConstructor;
 
 import java.util.Scanner;
 

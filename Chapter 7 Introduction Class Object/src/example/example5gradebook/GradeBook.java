@@ -1,4 +1,4 @@
-package example5gradebook;
+package example.example5gradebook;
 
 public class GradeBook {
     private String courseName; // Guarda o nome do curso
@@ -103,7 +103,7 @@ public class GradeBook {
         System.out.printf("%nClass average is %.2f%n", getAverage());
 
         // Chama o maximo e minimo
-        System.out.printf("Lowest grade is %d%nHighest grade is %d%n%n", getMinimum()getMaximum());
+        System.out.printf("Lowest grade is %d%nHighest grade is %d%n%n", getMinimum(),getMaximum());
 
         // Mostra a barra de distribuicao das notas
         outputBarChart();

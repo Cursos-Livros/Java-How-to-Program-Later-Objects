@@ -9,7 +9,7 @@ public class CarTest {
         ArrayList<Car> cars = new ArrayList<Car>();
 
         // Aqui usei entidades ricas
-        // Entidades ricas sao classes que contem grande parte das regras de negocio 
+        // Entidades ricas sao classes que contem grande parte das regras de negocio
         for (int i = 0; i < 2; i++) {
             cars.add(newCar(input));
             input.nextLine();

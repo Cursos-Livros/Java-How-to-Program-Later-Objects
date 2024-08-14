@@ -1,23 +1,22 @@
-package example.example4cardshuffle;
+package exercise.exercise16CardShufflingDealing;
 
 import java.security.SecureRandom;
 
 public class DeckCards {
     // gerador numero aleatorio
     private static final SecureRandom randomNumbers = new SecureRandom();
-    private static final int NUMBER_OF_CARDS = 52; // constantes de cartas para usar no gerador de cartas
-
+    private static final int NUMBER_OF_CARDS = 52;// constantes de cartas para usar no gerador de cartas
+    private Card card = new Card();
     private Card[] deck = new Card[NUMBER_OF_CARDS];
     private int currentCard = 0; // Marca a posicao para ser tratada 0 - 51
 
     public DeckCards() {
-        String[] faces = {"Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack",
-                "Queen", "King"};
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
         // Popula deck com objetos card
-        for (int count = 0; count < deck.length; count++) {
-            deck[count] = new Card(faces[count % 13], suits[count / 13]);
+        for (int face = 0; face < 13; face++) {
+            for (int suit = 0; suit < 4; suit++) {
+                deck = card.cardGenerator(face, suit);
+            }
         }
     }
 
@@ -43,13 +42,13 @@ public class DeckCards {
     }
 
     // Distribui uma carta
-    public Card deal(){
+    public Card deal() {
         // determina se a cartas para serem distribuidas
         // se a carta atual for maior ou igual a 52 quer dizer que todas as cartas foram distribuidas
         // Lembre-se currentCard++ garante que a sera sempre uma posicao a frente
-        if(currentCard < deck.length){
+        if (currentCard < deck.length) {
             return deck[currentCard++];
-        }else{
+        } else {
             return null;
         }
     }

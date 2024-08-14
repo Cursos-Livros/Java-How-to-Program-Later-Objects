@@ -1,4 +1,4 @@
-package example.example4cardshuffle;
+package exercise.exercise16CardShufflingDealing;
 
 public class DeckCardTest {
     public static void main(String[] args) {

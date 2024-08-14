@@ -3,7 +3,6 @@ package exercise.exercise16CardShufflingDealing;
 public class DeckCardTest {
     public static void main(String[] args) {
         DeckCards myDeckCards = new DeckCards();
-        myDeckCards.shuffle();
 
         // Mostra todas as 52 posicoes do baralho embaralhado
         showDeck(myDeckCards);

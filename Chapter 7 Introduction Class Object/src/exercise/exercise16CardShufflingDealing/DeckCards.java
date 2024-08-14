@@ -6,16 +6,20 @@ public class DeckCards {
     // gerador numero aleatorio
     private static final SecureRandom randomNumbers = new SecureRandom();
     private static final int NUMBER_OF_CARDS = 52;// constantes de cartas para usar no gerador de cartas
-    private Card card = new Card();
+
     private Card[] deck = new Card[NUMBER_OF_CARDS];
     private int currentCard = 0; // Marca a posicao para ser tratada 0 - 51
 
-    public DeckCards() {
 
+    // A estrategia aqui foi criar um deck de cartas
+    // Que nao instanciace as cartas enviando naipes
+    // e sim apenas criando as cartas
+    public DeckCards() {
         // Popula deck com objetos card
+        int cardNumber = 0;
         for (int face = 0; face < 13; face++) {
             for (int suit = 0; suit < 4; suit++) {
-                deck = card.cardGenerator(face, suit);
+                deck[cardNumber++] = new Card(face, suit);
             }
         }
     }

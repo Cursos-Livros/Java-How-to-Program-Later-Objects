@@ -18,6 +18,14 @@ public class Card {
         this.suit = suits.suitOptions[suitOption];
     }
 
+    public String getFace() {
+        return face;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
+
     // retorna uma string com a carta e o naipe
     // exe: As de copas
     public String toString() {

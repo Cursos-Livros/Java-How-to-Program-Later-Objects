@@ -18,7 +18,7 @@ public class DeckCardTest {
 
     public static void showDeck(Card[] hand) {
         for (int i = 0; i <= hand.length - 1; i++) {
-            System.out.println("hand = " + hand[i]);
+            System.out.println("hand " + (i + 1) + " = " + hand[i]);
         }
     }
 }

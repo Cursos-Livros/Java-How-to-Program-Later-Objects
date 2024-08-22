@@ -1,6 +1,11 @@
 package exercise.exercise16CardShufflingDealing;
 
 import java.security.SecureRandom;
+import java.util.Arrays;
+
+// Sobre metodos de acesso privado o elemento nao sera acessado fora da classe declarada
+// Static entao o valor permanecera o mesmo independente dos objetos da sua classe
+// final uma ver carregada nao podera mudar seu valor
 
 public class DeckCards {
     // gerador numero aleatorio
@@ -8,7 +13,9 @@ public class DeckCards {
     private static final int NUMBER_OF_CARDS = 52;// constantes de cartas para usar no gerador de cartas
 
     private Card[] deck = new Card[NUMBER_OF_CARDS];
-    private int currentCard = 0; // Marca a posicao para ser tratada 0 - 51
+    private Integer[] listCardDealed = new Integer[NUMBER_OF_CARDS];
+    private int currentCard = 0;
+    // Marca a posicao para ser tratada 0 - 51
 
 
     // A estrategia aqui foi criar um deck de cartas
@@ -22,7 +29,9 @@ public class DeckCards {
                 deck[cardNumber++] = new Card(face, suit);
             }
         }
+        Arrays.fill(listCardDealed, 0);
     }
+
 
     // embaralha o deck de cartas
     // algoritmo one pass
@@ -53,8 +62,10 @@ public class DeckCards {
         if (currentCard < deck.length) {
             return deck[currentCard++];
         } else {
-            return null;
+            return null; // Todas as cartas já foram distribuídas
         }
     }
 }
+
+
 

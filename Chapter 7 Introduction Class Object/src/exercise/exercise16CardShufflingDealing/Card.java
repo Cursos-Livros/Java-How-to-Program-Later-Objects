@@ -14,8 +14,16 @@ public class Card {
 
     // construtor que recebe a carta e o naipe
     public Card(int faceOption, int suitOption) {
-        this.face = faces.faceOptions[faceOption];
-        this.suit = suits.suitOptions[suitOption];
+        this.face = faces.getFaceOption(faceOption);
+        this.suit = suits.getSuitOptions(suitOption);
+    }
+
+    public String getFace() {
+        return face;
+    }
+
+    public String getSuit() {
+        return suit;
     }
 
     public String getFace() {

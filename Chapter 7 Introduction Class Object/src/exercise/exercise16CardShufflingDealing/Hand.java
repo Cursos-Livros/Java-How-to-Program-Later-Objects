@@ -20,7 +20,7 @@ public class Hand {
 //      Deve-se prestar atencao se a instanciacao da classe sendo feita no atributo
 //      Nao esta criando ocorrencias da classe que esta compondo atoa
 //      Para resolver isto apenas inicie os atributos com o construtor
-        for (int card = 0; card < size; card++){
+        for (int card = 0; card < size; card++) {
             hand[card] = deckCards.deal();
         }
     }
@@ -41,23 +41,40 @@ public class Hand {
         return hand;
     }
 
-    public void onePair() {
-        int apparitions = 0;
+    public boolean hasOnePair(){
+        String[] faces = new String[hand.length]; // Array para receber numero de cartas
+        int[] counts = new int[hand.length];
 
-        for (int card = 0; card < hand.length; card++) {
-            String currentCard = hand[0].getFace();
-
-            // Nao se esqueca que e posicao da frente
-            for (int nextCard = card + 1; nextCard < hand.length; nextCard++) {
-                if (Objects.equals(currentCard, hand[nextCard].getFace())) {
-                    showOnePair(apparitions, card, nextCard);
-                }
-            }
-        }
     }
 
-    public String showOnePair(int apparition, int card, int nextCard) {
-        System.out.println("Found a pair:");
-        return hand[card] + " and " + hand[nextCard];
-    }
+//    Essa versao do codigo nao e tao performatica
+//    public void onePair() {
+//        int apparitions = 0;
+//        String cardOne = "";
+//        String cardTwo = "";
+//        String currentCard = "";
+//
+//        for (int card = 0; card < hand.length; card++) {
+//            currentCard = hand[card].getFace();
+//            // Esse loop sera executado e sempre voltar para o loop acima antes de ir para o pedaco final do codigo
+//            for (int nextCard = card + 1; nextCard < hand.length; nextCard++) { // A indice da proxima carta comeca em card + 1
+//                if (Objects.equals(currentCard, hand[nextCard].getFace())) { // E possivel fazer diferente utilizando hand[card].getFace()
+//                    apparitions++;
+//                    cardOne = hand[card].getFace();
+//                    cardTwo = hand[nextCard].getFace();
+//                }
+//            }
+//        }
+//
+//        if (apparitions == 1) {
+//            showOnePair(cardOne, cardTwo);
+//        }
+//    }
+
+//    public void showOnePair(String cardOne, String cardTwo) {
+//        System.out.println("Found a pair:");
+//        System.out.println(cardOne + " and " + cardTwo);
+//    }
+
 }
+

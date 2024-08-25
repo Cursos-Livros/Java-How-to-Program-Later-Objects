@@ -18,13 +18,6 @@ public class Card {
         this.suit = suits.getSuitOptions(suitOption);
     }
 
-    public String getFace() {
-        return face;
-    }
-
-    public String getSuit() {
-        return suit;
-    }
 
     public String getFace() {
         return face;

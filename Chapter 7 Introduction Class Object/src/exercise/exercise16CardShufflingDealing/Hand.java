@@ -1,7 +1,5 @@
 package exercise.exercise16CardShufflingDealing;
 
-import java.util.Objects;
-
 public class Hand {
     private int size; // se nao for possivel saber o tamanho logo de cara
     // melhor usar essa maneira, inicie o array no construtor
@@ -11,11 +9,9 @@ public class Hand {
 
     public Hand(int size, DeckCards deck) {
         this.size = size;
-        // O problema aqui é que array nao é dinamico, uma vez que seja iniciado com 0 da nao é possivel atualizar
-        // seu tamanho
         this.hand = new Card[size];  // Inicializa o array com o tamanho correto
         this.deckCards = deck;
-//      Preste atencao nisto
+
 //      Ao criar uma classe que tenha composicao de mais de uma classe
 //      Deve-se prestar atencao se a instanciacao da classe sendo feita no atributo
 //      Nao esta criando ocorrencias da classe que esta compondo atoa
@@ -41,11 +37,62 @@ public class Hand {
         return hand;
     }
 
-    public boolean hasOnePair(){
+    public boolean hasOnePair() {
         String[] faces = new String[hand.length]; // Array para receber numero de cartas
-        int[] counts = new int[hand.length];
+        int[] counts = new int[hand.length]; // Array para contar o numero de vezes que uma determinada string que e
+        // o valor da carta apareceu
 
+        // Preenche um array de faces
+        // faces sao strings
+        for (int card = 0; card < hand.length; card++) {
+            faces[card] = hand[card].getFace();
+        }
+
+        // Conta a ocorrencia de cada carta
+        for (String faceValue : faces) {
+            int index = findIndex(faces, faceValue, 0);
+            if (index != -1) {
+                counts[index]++;
+            }
+        }
+
+        //Conta as ocorrências de cada carta
+        boolean hasPair = false;
+        int indexHand = 0;
+        for (int count : counts) {
+            if (count == 2) {
+                if (hasPair) {
+                    return false;
+                }
+                hasPair = true;
+                System.out.println(hand[indexHand].getFace());
+            } else if (count > 2) {
+                return false;
+            }
+            indexHand++;
+        }
+
+
+
+        return hasPair;
     }
+
+    // Funcao auxiliar para encontrar o indice da face em um array
+    private int findIndex(String[] array, String faceTarget, int start) {
+        for (int i = start; i < array.length; i++) {
+            if (array[i].equals(faceTarget)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public String toString() {
+        return "Has one pair: " +  hasOnePair() ;
+    }
+}
+
 
 //    Essa versao do codigo nao e tao performatica
 //    public void onePair() {
@@ -76,5 +123,5 @@ public class Hand {
 //        System.out.println(cardOne + " and " + cardTwo);
 //    }
 
-}
+
 

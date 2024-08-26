@@ -9,7 +9,6 @@ public class DeckCardTest {
         Hand hand = new Hand(5, myDeckCards);
 
         System.out.println(Arrays.toString(hand.getHand()));
-        hand.onePair();
-
+        System.out.println(hand.toString());
     }
 }

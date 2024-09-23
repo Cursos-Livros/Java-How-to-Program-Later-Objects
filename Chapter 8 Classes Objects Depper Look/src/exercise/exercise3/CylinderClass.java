@@ -8,7 +8,7 @@ public class CylinderClass {
 
         try {
             if (radius < 1) {
-                throw new IllegalArgumentException("This radius" + radius + "is not valid");
+                throw new IllegalArgumentException("This radius" + radius + " is not valid");
             }
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
@@ -16,7 +16,7 @@ public class CylinderClass {
 
         try {
             if (radius < 1) {
-                throw new IllegalArgumentException("This radius" + radius + "is not valid");
+                throw new IllegalArgumentException("This radius" + radius + " is not valid");
             }
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
@@ -33,7 +33,7 @@ public class CylinderClass {
     public void setRadius(double radius) {
         try {
             if (radius < 1) {
-                throw new IllegalArgumentException("This radius" + radius + "is not valid");
+                throw new IllegalArgumentException("This radius" + radius + " is not valid");
             }
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
@@ -49,7 +49,7 @@ public class CylinderClass {
     public void setHeight(double height) {
         try {
             if (radius < 1) {
-                throw new IllegalArgumentException("This height" + height + "is not valid");
+                throw new IllegalArgumentException("This height" + height + " is not valid");
             }
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());

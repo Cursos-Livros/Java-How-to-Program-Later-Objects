@@ -61,20 +61,42 @@ public class Date {
     }
 
     public void incrementDay(int daysToPass) {
-        if (daysToPass > daysPerMonth[month]) {
-            System.out.println(daysToPass + " its not permitted to the month" + month);
-        } else {
-            for (int days = 1; days < daysToPass; days++) {
-                day++;
-                System.out.println(this.toString());
+        while (daysToPass > 0) {
+            int daysInCurrentMonth = daysPerMonth[month];
+            int discountDays = day + daysToPass;
+
+            if (month == 2 && isLeapYear(year)) {
+                daysInCurrentMonth = 29;
+            }
+
+            if (day + daysToPass < daysInCurrentMonth) {
+                System.out.println(this);
+                for (int daysPass = 1; daysPass < daysToPass; daysPass++) {
+                    day++;
+                    System.out.println(this);
+                }
+                daysToPass = 0;
+            }
+
+            if (day + daysToPass > daysInCurrentMonth) {
+                for (int daysPass = 1; daysPass < daysInCurrentMonth; daysPass++) {
+                    day++;
+                    System.out.println(this);
+                }
+                day = 1;
+                daysToPass -= (daysInCurrentMonth - day + 1);
+                incrementMonth(1);
             }
         }
+    }
 
-        if()
+
+    private boolean isLeapYear(int year) {
+        return (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0));
     }
 
     public void incrementMonth(int monthToPass) {
-        if (monthToPass > 0 && monthToPass < 12) {
+        if (monthToPass >= 0 && monthToPass < 12) {
             for (int months = 1; months <= monthToPass; months++) {
                 month++;
                 System.out.println(this.toString());

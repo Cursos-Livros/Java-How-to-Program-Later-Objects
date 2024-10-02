@@ -1,6 +1,5 @@
-package exercise.exercise13;
+package exercise.exercise14;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class SetInteger {

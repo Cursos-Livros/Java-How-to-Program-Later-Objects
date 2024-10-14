@@ -12,7 +12,7 @@ public class SetIntegerTest {
 
         System.out.println("Enter the integer");
         int integer = integerRangeTest(input, sizeList);
-        SetInteger integerSet = new SetInteger(integer - 1, sizeList);
+        SetInteger2 integerSet = new SetInteger2(integer - 1, sizeList);
         setManipulation(integerSet, input, sizeList);
 
         System.out.println("What the size of the list 2:");
@@ -21,10 +21,10 @@ public class SetIntegerTest {
 
         System.out.println("Enter the integer");
         int integer2 = integerRangeTest(input, sizeList);
-        SetInteger integerSet2 = new SetInteger(integer2 - 1, sizeList2);
+        SetInteger2 integerSet2 = new SetInteger2(integer2 - 1, sizeList2);
         setManipulation(integerSet2, input, sizeList2);
 
-        System.out.println(SetInteger.showUnion(SetInteger.union(integerSet.getA(), integerSet2.getA())));
+        System.out.println(SetInteger2.showUnion(SetInteger2.union(integerSet.getA(), integerSet2.getA())));
 
         input.close();
     }
@@ -76,7 +76,7 @@ public class SetIntegerTest {
         return newInteger;
     }
 
-    public static void setManipulation(SetInteger setList, Scanner input, int sizeList) {
+    public static void setManipulation(SetInteger2 setList, Scanner input, int sizeList) {
         char option = ' ';
         while (option != 'q') {
             System.out.println("Enter the new integer");

@@ -18,9 +18,17 @@ public class HughIntegerTest {
         HughInteger arrayInteger2 = new HughInteger(number2);
 
         Integer[] sumIntegerArray = HughInteger.add(arrayInteger1.getArrayInteger(), arrayInteger2.getArrayInteger());
+        Integer[] subIntegerArray = HughInteger.sub(arrayInteger1.getArrayInteger(), arrayInteger2.getArrayInteger());
+        Boolean isEqualIntegerArray = HughInteger.isEqualTo(arrayInteger1.getArrayInteger(), arrayInteger2.getArrayInteger());
+        String isisGreaterThanIntegerArray = HughInteger.isGreaterThan(arrayInteger1.getArrayInteger(), arrayInteger2.getArrayInteger());
 
+        System.out.println(arrayInteger1.toString());
+        System.out.println(arrayInteger2.toString());
         System.out.println(Arrays.toString(sumIntegerArray));
+        System.out.println(Arrays.toString(subIntegerArray));
+        System.out.println(isEqualIntegerArray);
+        System.out.println(isisGreaterThanIntegerArray);
 
-
+        input.close();
     }
 }

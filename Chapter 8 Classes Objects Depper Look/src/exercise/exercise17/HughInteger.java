@@ -45,11 +45,6 @@ public class HughInteger {
         Integer[] newArrayInteger = new Integer[sizeBiggerArray];
 
         for (int i = 0; i < newArrayInteger.length; i++) {
-            if (otherArrayInteger1[i] == null) {
-                newArrayInteger[i] = 0;
-                otherArrayInteger1[i] = 0;
-                otherArrayInteger2[i] = 0;
-            }
             newArrayInteger[i] = otherArrayInteger1[i] - otherArrayInteger2[i];
         }
         return newArrayInteger;
@@ -60,13 +55,22 @@ public class HughInteger {
     }
 
     public static String isGreaterThan(Integer[] otherArrayInteger1, Integer[] otherArrayInteger2) {
-        int sizeArray = Math.max(otherArrayInteger1.length, otherArrayInteger2.length);
-
-        if (otherArrayInteger1.length == sizeArray) {
+        if (otherArrayInteger1.length > otherArrayInteger2.length) {
             return "Array 1 is the Bigger";
         }
+        if (otherArrayInteger2.length > otherArrayInteger1.length) {
+            return "Array 2 is the Bigger";
+        }
 
-        return "Array 2 is the Bigger";
+        for (int i = 0; i < otherArrayInteger1.length; i++) {
+            if (otherArrayInteger1[i] > otherArrayInteger2[i]) {
+                return "Array 1 is the Bigger";
+            } else if (otherArrayInteger1[i] < otherArrayInteger2[i]) {
+                return "Array 2 is the Bigger";
+            }
+        }
+
+        return "Both arrays are equal";
     }
 
 

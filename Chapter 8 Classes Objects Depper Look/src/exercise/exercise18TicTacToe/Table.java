@@ -1,5 +1,6 @@
 package exercise.exercise18TicTacToe;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Table {
@@ -21,17 +22,23 @@ public class Table {
     }
 
     public Boolean checkPlayerPosition(Integer playerPosition) {
-        if (playerPosition < 1 || playerPosition > 3) {
+        return playerPosition >= 1 && playerPosition <= 3;
+    }
+
+    public Boolean checkPlayPosition(Character playerPiece, Integer playerPositionX, Integer playerPositionY) {
+        if (playerPositionX < 1 || playerPositionX > 3 || playerPositionY < 1 || playerPositionY > 3) {
             return false;
         }
-        return true;
+        String cell = table[playerPositionX - 1][playerPositionY - 1];
+        return Objects.equals(cell, "Empty");
     }
 
     public void positionate(Character playerPiece, Integer playerPositionX, Integer playerPositionY) {
-        if (playerPiece == 'X') {
+        String cell = table[playerPositionX - 1][playerPositionY - 1];
+        if (playerPiece == 'X' && !Objects.equals(cell, "O")) {
             table[playerPositionX - 1][playerPositionY - 1] = Pieces.pieceX.getPiece();
         }
-        if (playerPiece == 'O') {
+        if (playerPiece == 'O' && !Objects.equals(cell, "X")) {
             table[playerPositionX - 1][playerPositionY - 1] = Pieces.pieceO.getPiece();
         }
     }
@@ -54,10 +61,10 @@ public class Table {
     }
 
     private Boolean checkRows(String playerPiece) {
-        for (int i = 0; i < table.length; i++) {
-            if (table[i][0].equals(playerPiece) &&
-                    table[i][1].equals(playerPiece) &&
-                    table[i][2].equals(playerPiece)) {
+        for (String[] strings : table) {
+            if (strings[0].equals(playerPiece) &&
+                    strings[1].equals(playerPiece) &&
+                    strings[2].equals(playerPiece)) {
                 return true;
             }
         }
@@ -65,10 +72,10 @@ public class Table {
     }
 
     private Boolean checkColumn(String playerPiece) {
-        for (int i = 0; i < table.length; i++) {
-            if (table[0][i].equals(playerPiece) &&
-                    table[1][i].equals(playerPiece) &&
-                    table[2][i].equals(playerPiece)) {
+        for (int i = 0; i < 3; i++) {
+            if (table[i][0].equals(playerPiece) &&
+                    table[i][1].equals(playerPiece) &&
+                    table[i][2].equals(playerPiece)) {
                 return true;
             }
         }
@@ -97,18 +104,15 @@ public class Table {
         return false;
     }
 
-    public Boolean checkDraw(Integer moves){
-        if(moves < 9){
-            return false;
-        }
-        return true;
+    public Boolean checkDraw(Integer moves) {
+        return moves > 9;
     }
 
-    public String showWin() {
-        return "Player 1 Win!";
+    public String showWin(Character piece) {
+        return "Player " + piece + " Win!";
     }
 
-    public String showDrawMessage(){
+    public String showDrawMessage() {
         return "A tough battle fought to a draw!";
     }
 

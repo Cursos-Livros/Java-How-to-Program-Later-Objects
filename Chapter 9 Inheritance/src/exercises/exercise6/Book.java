@@ -10,4 +10,36 @@ public class Book {
         this.yearPublication = yearPublication;
         this.author = author;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Integer getYearPublication() {
+        return yearPublication;
+    }
+
+    public void setYearPublication(Integer yearPublication) {
+        this.yearPublication = yearPublication;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %s. %n%s: %s.%n%s: %s.%n",
+                "Tittle", title,
+                "Year Publication", yearPublication,
+                "Author", author);
+    }
 }

@@ -27,12 +27,12 @@ public class Book {
         this.yearPublication = yearPublication;
     }
 
-    public String getAuthor() {
+    public String getArtistName() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setArtistName(String artistName) {
+        this.author = artistName;
     }
 
     @Override

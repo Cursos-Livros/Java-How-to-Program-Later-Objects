@@ -13,7 +13,7 @@ public class PrintBook extends Book {
     @Override
     public String toString() {
         return String.format("%s%n%s%n%s : %s%n%s: %d%n",
-                "Audiobook",
+                "Printbook",
                 super.toString(),
                 "Publisher", publisher,
                 "ISBN", ISBN);

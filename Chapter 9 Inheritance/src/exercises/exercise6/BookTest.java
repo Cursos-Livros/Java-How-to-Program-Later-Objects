@@ -28,5 +28,15 @@ public class BookTest {
         PrintBook printBook = new PrintBook(bookName, yearPublication, authorName, publisherName, isbn);
 
         System.out.println(printBook.toString());
+
+        System.out.println("AudioBook Class");
+        System.out.println("Enter the length:");
+        int length = input.nextInt();
+        System.out.println("Enter artist name:");
+        input.nextLine();
+        String artistName = input.nextLine();
+        AudioBook audiobook = new AudioBook(bookName, yearPublication, authorName, length, artistName);
+
+        System.out.println(audiobook.toString());
     }
 }

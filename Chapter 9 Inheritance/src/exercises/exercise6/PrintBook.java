@@ -2,9 +2,9 @@ package exercises.exercise6;
 
 public class PrintBook extends Book {
     String publisher;
-    Integer ISBN;
+    Long ISBN;
 
-    public PrintBook(String title, Integer yearPublication, String author, String publisher, Integer ISBN) {
+    public PrintBook(String title, Integer yearPublication, String author, String publisher, Long ISBN) {
         super(title, yearPublication, author);
         this.publisher = publisher;
         this.ISBN = ISBN;

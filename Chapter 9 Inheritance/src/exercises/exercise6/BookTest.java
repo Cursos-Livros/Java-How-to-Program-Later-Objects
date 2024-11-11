@@ -23,7 +23,7 @@ public class BookTest {
         System.out.println("enter the publisher name:");
         String publisherName = input.nextLine();
         System.out.println("Enter ISBN:");
-        int isbn = input.nextInt();
+        long isbn = input.nextLong();
         input.nextLine();
         PrintBook printBook = new PrintBook(bookName, yearPublication, authorName, publisherName, isbn);
 

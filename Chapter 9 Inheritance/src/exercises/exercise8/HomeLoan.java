@@ -1,10 +1,13 @@
 package exercises.exercise8;
 
 public class HomeLoan extends Loan {
+    double interestHomeLoanRate;
+
     public HomeLoan(double amount, int tenure) {
         super(amount, tenure);
-        this.interestRate = 0.05;
+        super.setInterestRate(0.03);
     }
+
 
     @Override
     public String toString() {

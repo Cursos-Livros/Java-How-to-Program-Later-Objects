@@ -2,7 +2,7 @@ package exercises.exercise8;
 
 public class Loan {
     private double amount;
-    protected double interestRate = 0.0;
+    private double interestRate = 0.0;
     private int tenure;
 
     public Loan(double amount, int tenure) {

@@ -25,7 +25,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return String.format("%s: %s %s%n%s: %s%n",
+        return String.format("%s: %s %s%n%s: %s",
                 "commission employee", firstName, lastName,
                 "social security number", socialSecurityNumber
         );

@@ -2,7 +2,7 @@ package exercises.exercise14;
 
 public class BasePlusCommisionEmployee extends Employee {
     private Double baseSalary;
-    private double grossSales; // gross weekly sales
+    private Double grossSales; // gross weekly sales
     private double commissionRates; // commission percentage
 
     public BasePlusCommisionEmployee(String firstName, String lastName, String socialSecurityNumber,
@@ -19,7 +19,8 @@ public class BasePlusCommisionEmployee extends Employee {
         if (baseSalary < 0.0) {
             throw new IllegalArgumentException("Base salary must be >=0.0");
         }
-
+        this.grossSales = grossSales;
+        this.commissionRates = commissionRates;
         this.baseSalary = baseSalary;
     }
 
@@ -39,8 +40,9 @@ public class BasePlusCommisionEmployee extends Employee {
     }
 
     public String toString() {
-        return String.format("%s%n%s: %.2f%n%s: %.2f",
+        return String.format("%s%n%s: %.2f%n%s: %.2f%n%s: %.2f",
                 super.toString(),
+                "base salary", baseSalary,
                 "gross sales", grossSales,
                 "commission rate", commissionRates);
     }

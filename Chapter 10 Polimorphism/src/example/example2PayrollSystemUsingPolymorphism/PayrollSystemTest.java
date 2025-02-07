@@ -17,6 +17,8 @@ public class PayrollSystemTest {
 
         Employee[] employees = new Employee[4];
 
+        // Isso é um tipo de referencia onde um objeto de subclasse é referenciado por um superclasse
+        // Ou seja a superclasse referencia um objeto de subclasse
         employees[0] = salariedEmployee;
         employees[1] = hourlyEmployee;
         employees[2] = commissionEmployee;
@@ -34,6 +36,8 @@ public class PayrollSystemTest {
                 // BasePlusCommissionEmployee reference
                 BasePlusCommissionEmployee employee = (BasePlusCommissionEmployee) currentEmployee;
 
+                // Caso nao houvesse um downcast não seria possivel
+                // Utilizar a variavel emplooyee e seus atributos e métodos da subclasse
                 employee.setBaseSalary(1.10 * employee.getBaseSalary());
 
                 System.out.printf("earned $%,.2f%n%n", currentEmployee.earnings());

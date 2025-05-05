@@ -28,7 +28,8 @@ public class Exercise10PixelQuantizationArrayListVersion {
         // for each nao funciona muito bem aqui pois e necessario mudar(set) o elemento no indice
         // nesse caso o set funciona melhor e utilizando um laco for normal
         for (int i = 0; i < array.size(); i++) {
-            quantizedArray.set(i, calculateQuantization(i));
+            int valueCurrentIndexArray = array.get(i);
+            quantizedArray.set(i, calculateQuantization(valueCurrentIndexArray));
         }
 
         return quantizedArray;

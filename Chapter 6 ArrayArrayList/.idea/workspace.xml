@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b19c673a-df07-4d6a-8265-1c32f81d9697" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercise/Exercise12DuplicateElimination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chapter 4 Control Statemens Part 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chapter 4 Control Statemens Part 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JoseAugustoValim&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cursos-Livros/Java-How-to-Program-Later-Objects.git&quot;,
+    &quot;accountId&quot;: &quot;e76b6664-6e1c-48e5-a466-3b9da3d7aa73&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -34,18 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Exercise10PixelQuantization.executor": "Run",
-    "Application.Exercise10PixelQuantizationArrayListVersion.executor": "Run",
-    "Application.Exercise12DuplicateElimination.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/José Augusto/Documents/Java-How-to-Program-Later-Objects/Chapter 6 ArrayArrayList",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Exercise10PixelQuantization.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Exercise10PixelQuantizationArrayListVersion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Exercise11.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Exercise12DuplicateElimination.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/zeaug/IdeaProjects/Java-How-to-Program-Later-Objects/Chapter 6 ArrayArrayList&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="exercise" />
@@ -89,6 +102,20 @@
           <url>file://$PROJECT_DIR$/src/exercise/Exercise12DuplicateElimination.java</url>
           <line>80</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exercise/Exercise11.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/exercise/Exercise11.java</url>
+          <line>37</line>
+          <properties class="exercise.Exercise11" method="calculateQuantization">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

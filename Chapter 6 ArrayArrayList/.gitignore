@@ -27,3 +27,54 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Arquivos gerados pelo IntelliJ ###
+.idea/
+*.iml
+*.iws
+*.ipr
+out/  # Pasta de compilação padrão do IntelliJ
+
+### Arquivos compilados do Java ###
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+### Dependências (se não usar Git LFS) ###
+/target/  # Para projetos Maven
+/build/   # Para projetos Gradle
+/lib/     # Bibliotecas manuais
+
+### Arquivos de sistema ###
+.DS_Store  # Mac
+Thumbs.db  # Windows
+*.log      # Logs
+
+### Configurações específicas do projeto ###
+.env       # Variáveis de ambiente (sensíveis!)
+*.cache
+*.orig     # Arquivos de backup de merge
+
+### Por que o que nao versionar ###
+#.idea/ e *.iml
+#
+#São configurações locais da IDE (IntelliJ). Se outro dev abrir o projeto, o IntelliJ recria esses arquivos.
+#
+#out/ e *.class
+#
+#Arquivos compilados (binários) são gerados automaticamente. Não faz sentido versioná-los, pois podem ser
+##reconstruídos com mvn compile ou javac.
+#
+#/target/ (Maven) ou /build/ (Gradle)
+#
+#Contêm dependências baixadas e artefatos gerados. O Maven/Gradle recriam essas pastas quando necessário.
+#
+#.env e arquivos sensíveis
+#
+#Nunca versione credenciais (senhas, tokens). Se expostos, seu repositório ficará vulnerável.
+#
+#Arquivos de sistema (.DS_Store, Thumbs.db)
+#
+#São metadados de sistemas operacionais e não têm utilidade no versionamento.

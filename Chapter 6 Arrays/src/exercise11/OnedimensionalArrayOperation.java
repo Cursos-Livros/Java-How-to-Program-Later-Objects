@@ -1,5 +1,6 @@
 package exercise11;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class OnedimensionalArrayOperation {
@@ -10,7 +11,7 @@ public class OnedimensionalArrayOperation {
         setToZero(arrayScores);
         multiply2(arrayScores);
         setScore(arrayScores);
-        //showBestScore(arrayScores);
+        showBestScore(arrayScores);
     }
 
     public static int[] generateScores(int[] arrayScores) {
@@ -39,11 +40,24 @@ public class OnedimensionalArrayOperation {
         }
     }
 
-   public static int[] setScore(int[] arrayScore){
+    // E um problema de bubble sort
+    public static int[] setScore(int[] arrayScore) {
         int[] bestScore = arrayScore;
 
-        for(int i=0 i<bestScore.length; i++){
-
+        for (int i = 0; i < bestScore.length - 1; i++) {
+            for (int j = 0; j < bestScore.length - i - 1; j++) {
+                if (bestScore[j] < bestScore[j + 1]) {
+                    int temp = bestScore[j];
+                    bestScore[j] = bestScore[j + 1];
+                    bestScore[j + 1] = temp;
+                }
+            }
         }
-   }
+
+        return bestScore;
+    }
+
+    public static void showBestScore(int[] arrayScore) {
+        System.out.println(Arrays.toString(arrayScore));
+    }
 }

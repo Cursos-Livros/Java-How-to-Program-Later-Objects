@@ -1,78 +1,63 @@
-/*
-
- */
-package exercise10;
+package exercise11;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class PixelQuantization {
+public class OnedimensionalArrayOperation {
     public static void main(String[] args) {
-        int[] originalColors = new int[9];
-        originalColors = fillColor(originalColors.length);
+        int[] arrayScores = new int[20];
 
-        int[] quantizazedColorList = convertOriginalColorToQuantitazed(originalColors);
-
-        showPixelQuantizationTab(originalColors, quantizazedColorList);
+        arrayScores = generateScores(arrayScores);
+        setToZero(arrayScores);
+        multiply2(arrayScores);
+        setScore(arrayScores);
+        showBestScore(arrayScores);
     }
 
-    public static int[] fillColor(int sizeOriginalColors) {
+    public static int[] generateScores(int[] arrayScores) {
         Random random = new Random();
-        int randomColor = random.nextInt(181);
-        int[] temporaryOriginalColors = new int[sizeOriginalColors];
+        int randomScore = random.nextInt(100);
 
-        for (int i = 0; i < sizeOriginalColors; i++) {
-            temporaryOriginalColors[i] = randomColor;
-            randomColor = random.nextInt(181);
+        int[] temporaryArrayScores = arrayScores;
+
+        for (int i = 0; i < temporaryArrayScores.length; i++) {
+            temporaryArrayScores[i] = randomScore;
+            randomScore = random.nextInt(100);
         }
 
-        return temporaryOriginalColors;
+        return temporaryArrayScores;
     }
 
-    public static int[] convertOriginalColorToQuantitazed(int[] originalColorList) {
-        int[] temporaryColorList = new int[originalColorList.length];
-
-        for (int i = 0; i < originalColorList.length; i++) {
-            if (originalColorList[i] <= 20) {
-                temporaryColorList[i] = 10;
-            }
-            if (originalColorList[i] > 20 && originalColorList[i] <= 40) {
-                temporaryColorList[i] = 30;
-            }
-            if (originalColorList[i] > 40 && originalColorList[i] <= 60) {
-                temporaryColorList[i] = 50;
-            }
-            if (originalColorList[i] > 60 && originalColorList[i] <= 80) {
-                temporaryColorList[i] = 70;
-            }
-            if (originalColorList[i] > 80 && originalColorList[i] <= 100) {
-                temporaryColorList[i] = 90;
-            }
-            if (originalColorList[i] > 100 && originalColorList[i] <= 120) {
-                temporaryColorList[i] = 110;
-            }
-            if (originalColorList[i] > 120 && originalColorList[i] <= 140) {
-                temporaryColorList[i] = 130;
-            }
-            if (originalColorList[i] > 140 && originalColorList[i] <= 160) {
-                temporaryColorList[i] = 150;
-            }
-            if (originalColorList[i] > 161 && originalColorList[i] <= 180) {
-                temporaryColorList[i] = 170;
-            }
-            if (originalColorList[i] > 181) {
-                temporaryColorList[i] = 190;
-            }
+    public static void setToZero(int[] arrayScores) {
+        for (int i = 9; i < arrayScores.length; i++) {
+            arrayScores[i] = 0;
         }
-        return temporaryColorList;
     }
 
-    public static void showPixelQuantizationTab(int[] colorList, int[] quantizazedColorList) {
-        System.out.println("Pixel Quantization:");
-        System.out.printf("-Original - Quantizazed %n");
-
-        for (int i = 0; i < colorList.length; i++) {
-            System.out.printf("%d -> %d %n", colorList[i], quantizazedColorList[i]);
+    public static void multiply2(int[] arrayScores) {
+        for (int i = 0; i < arrayScores.length; i++) {
+            arrayScores[i] *= 2;
         }
+    }
+
+    // E um problema de bubble sort
+    public static int[] setScore(int[] arrayScore) {
+        int[] bestScore = arrayScore;
+
+        for (int i = 0; i < bestScore.length - 1; i++) {
+            for (int j = 0; j < bestScore.length - i - 1; j++) {
+                if (bestScore[j] < bestScore[j + 1]) {
+                    int temp = bestScore[j];
+                    bestScore[j] = bestScore[j + 1];
+                    bestScore[j + 1] = temp;
+                }
+            }
+        }
+
+        return bestScore;
+    }
+
+    public static void showBestScore(int[] arrayScore) {
+        System.out.println(Arrays.toString(arrayScore));
     }
 }

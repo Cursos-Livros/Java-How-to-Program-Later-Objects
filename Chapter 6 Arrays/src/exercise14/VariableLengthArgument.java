@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 public class VariableLengthArgument {
     public static void main(String[] args) {
-        // 1. Pass individual arguments (most common)
+        // Varargs Variable Arguments
+        // Um tipo de assinatura de método que pode receber qualquer numero de inputs
+        // Permite criar usar o mesmo método para diferentes numeros de parametros
+        // Pode receber valor nenhum
+
         average(10, 10, 10);
     }
 
@@ -17,7 +21,7 @@ public class VariableLengthArgument {
             quantity += 1;
         }
 
-        double average = (double) sum / quantity;
+        double average = (double) sum / listInteger.length;
         System.out.println(average);
     }
 }

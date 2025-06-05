@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class GameCraps {
     private static final SecureRandom randomNumbers = new SecureRandom();
 
-    private enum Status {CONTINUE, WON, WONFIRSTROLL, LOST}
+    private enum Status {CONTINUE, WON, LOST}
 
     ;
 
@@ -23,25 +23,28 @@ public class GameCraps {
         int[] listNumberGamesWonEachRound = new int[11];
         int[] listNumberGamesLostEachRound = new int[11];
 
-
         for (int i = 0; i < 10; i++) {
-            int roll = 0;
+            int roll = 1;
             int sumOfDice = rollDice();
+            myPoint = sumOfDice;
             gameStatus = firstRoll(sumOfDice);
 
-            if (gameStatus == Status.WONFIRSTROLL) {
+            if (gameStatus == Status.WON) {
                 listNumberGamesWonEachRound[0] += 1;
+            }
+
+            if (gameStatus == Status.LOST) {
+                listNumberGamesLostEachRound[0] += 1;
             }
 
             // While game is not complete
             while (gameStatus == Status.CONTINUE) {
-                myPoint = sumOfDice;
-                gameStatus = continuePlaying(myPoint);
                 roll += 1;
+                gameStatus = continuePlaying(myPoint);
             }
 
             int lastPositionList = listNumberGamesWonEachRound.length - 1;
-            if (roll > listNumberGamesWonEachRound.length) {
+            if (roll >= listNumberGamesWonEachRound.length) {
                 roll = lastPositionList;
             }
 
@@ -76,7 +79,7 @@ public class GameCraps {
         switch (sumOfDice) {
             case SEVEN:
             case YO_LEVEN:
-                return Status.WONFIRSTROLL;
+                return Status.WON;
             case SNAKE_EYES:
             case TREY:
             case BOX_CARS:

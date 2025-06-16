@@ -41,10 +41,22 @@ public class AirlineReservationsSystem {
             System.out.println("Enter with the number of the seat:");
             int seatsOption = input.nextInt();
 
-            System.out.println("");
+            assignSeat(classOption, seats, seatsOption);
+
+            System.out.println("Want finish the booking?");
+            System.out.println("Enter 1 to yes:");
+            System.out.println("Enter 2 to no:");
+            int finishOption = input.nextInt();
+
+            if (!verifyFinishOption(finishOption)) {
+                finishOption = fixFinishOption(finishOption, input);
+            }
+
+            if(finishOption == 2){
+                break;
+            }
         }
 
-        assignSeat(classOption, seats);
         showSeatStatus(seats);
     }
 
@@ -115,25 +127,22 @@ public class AirlineReservationsSystem {
         }
     }
 
-    public static void assignSeat(int classOption, SetSeatStatus[] seats) {
-        int vipLimitSeat = seats.length / 2;
+    public static boolean verifyFinishOption(int finishOption) {
+        return finishOption == 1 || finishOption == 2;
+    }
 
-        if (classOption == 1) {
-            for (int i = 0; i < vipLimitSeat; i++) {
-                if (seats[i] == SetSeatStatus.FALSE) {
-                    seats[i] = SetSeatStatus.TRUE;
-                    break;
-                }
-            }
+    public static int fixFinishOption(int finishOption, Scanner input) {
+        int finishOptionTemporary = finishOption;
+
+        while (!verifyFinishOption(finishOption)) {
+            System.out.println("this option " + finishOption + " it's not allowed.");
+            finishOption = input.nextInt();
         }
 
-        if (classOption == 2) {
-            for (int i = vipLimitSeat; i < seats.length; i++) {
-                if (seats[i] == SetSeatStatus.FALSE) {
-                    seats[i] = SetSeatStatus.TRUE;
-                    break;
-                }
-            }
-        }
+        return finishOptionTemporary;
+    }
+
+    public static void assignSeat(int classOption, SetSeatStatus[] seats, int seatNumber) {
+        seats[seatNumber -1] = SetSeatStatus.TRUE;
     }
 }

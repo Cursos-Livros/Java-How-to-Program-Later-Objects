@@ -6,20 +6,11 @@ public class AirlineReservationsSystem {
     private enum SetSeatStatus {TRUE, FALSE}
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
         SetSeatStatus[] seats = new SetSeatStatus[10];
+        run(seats);
 
-        initiateSeats(seats); // inicia os assentos todos com status false
-        displaySeatStatus(seats);
+        //int classOption = getClassType(input);
 
-        int classOption = getClassType(input);
-        boolean stopBook = false;
-
-        while (!stopBook && !verifyFullBooking(seats)) {
-
-            stopBook = keepingReservation(input);
-        }
 //            showTypeClass(classOption);
 //
 //            if (classOption == 1) {
@@ -96,6 +87,27 @@ public class AirlineReservationsSystem {
 //        displaySeatStatus(seats);
     }
 
+    public static void run(SetSeatStatus[] seats) {
+        Scanner input = new Scanner(System.in);
+
+        initiateSeats(seats);// inicia os assentos todos com status false
+        displaySeatStatus(seats);
+
+        //!stopBook && !verifyFullBooking(seats))
+
+        while (!allSeatsBooked(seats)) {
+            int classOption = getClassType();
+
+
+
+            if (!keepingReservation()) {
+                break;
+            }
+        }
+
+        input.close();
+    }
+
     public static void initiateSeats(SetSeatStatus[] seats) {
         for (int i = 0; i < seats.length; i++) {
             seats[i] = SetSeatStatus.FALSE;
@@ -113,7 +125,32 @@ public class AirlineReservationsSystem {
         }
     }
 
-    public static int getClassType(Scanner input) {
+    public static boolean keepingReservation() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Want finish the booking?");
+        System.out.println("Enter 1 to yes:");
+        System.out.println("Enter 2 to no:");
+        int finishOption = input.nextInt();
+
+        while (!isValidFinishOption(finishOption)) {
+            System.out.println("this option " + finishOption + " it's not allowed.");
+            System.out.println("Enter the number again.");
+            finishOption = input.nextInt();
+        }
+
+        if (finishOption == 1) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static boolean isValidFinishOption(int finishOption) {
+        return finishOption == 1 || finishOption == 2;
+    }
+
+    public static int getClassType() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Enter with the type of classe");
         System.out.println("1 - Is for VIP class: (1-5)");
         System.out.println("2 - Is for Economic class: (1-5)");
@@ -134,6 +171,17 @@ public class AirlineReservationsSystem {
         return classOption == 1 || classOption == 2;
     }
 
+    public static boolean allSeatsBooked(SetSeatStatus[] seats) {
+        for (int i = 0; i < seats.length; i++) {
+            if (seats[i] == SetSeatStatus.FALSE) {
+                return false;
+            }
+        }
+        System.out.println("Next flight leaves in 3 hours");
+        return true;
+    }
+
+
     public static void showTypeClass(int classOption) {
         switch (classOption) {
             case 1:
@@ -145,15 +193,7 @@ public class AirlineReservationsSystem {
         }
     }
 
-    public static boolean verifyFullBooking(SetSeatStatus[] seats) {
-        for (int i = 0; i < seats.length; i++) {
-            if (seats[i] == SetSeatStatus.FALSE) {
-                return false;
-            }
-        }
-        System.out.println("Next flight leaves in 3 hours");
-        return true;
-    }
+
 
     public static void showSeatAvaiableClassVip(SetSeatStatus[] seats) {
         int vipLimitSeat = seats.length / 2;
@@ -248,26 +288,5 @@ public class AirlineReservationsSystem {
         System.out.println("This seat " + classOption + " is booked!");
     }
 
-    public static boolean keepingReservation(Scanner input) {
-        System.out.println("Want finish the booking?");
-        System.out.println("Enter 1 to yes:");
-        System.out.println("Enter 2 to no:");
-        int finishOption = input.nextInt();
 
-        while (!isValidFinishOption(finishOption)) {
-            System.out.println("this option " + finishOption + " it's not allowed.");
-            System.out.println("Enter the number again.");
-            finishOption = input.nextInt();
-        }
-
-        if (finishOption == 1) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public static boolean isValidFinishOption(int finishOption) {
-        return finishOption == 1 || finishOption == 2;
-    }
 }

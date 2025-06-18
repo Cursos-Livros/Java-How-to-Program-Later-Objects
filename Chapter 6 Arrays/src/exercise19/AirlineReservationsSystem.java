@@ -98,7 +98,9 @@ public class AirlineReservationsSystem {
         while (!allSeatsBooked(seats)) {
             int classOption = getClassType();
 
-
+            displayClassSeats(classOption);
+            displaySeatAvaiable(seats, classOption);
+            seats = processReservation(seats, classOption);
 
             if (!keepingReservation()) {
                 break;
@@ -125,28 +127,14 @@ public class AirlineReservationsSystem {
         }
     }
 
-    public static boolean keepingReservation() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Want finish the booking?");
-        System.out.println("Enter 1 to yes:");
-        System.out.println("Enter 2 to no:");
-        int finishOption = input.nextInt();
-
-        while (!isValidFinishOption(finishOption)) {
-            System.out.println("this option " + finishOption + " it's not allowed.");
-            System.out.println("Enter the number again.");
-            finishOption = input.nextInt();
+    public static boolean allSeatsBooked(SetSeatStatus[] seats) {
+        for (int i = 0; i < seats.length; i++) {
+            if (seats[i] == SetSeatStatus.FALSE) {
+                return false;
+            }
         }
-
-        if (finishOption == 1) {
-            return false;
-        }
-
+        System.out.println("Next flight leaves in 3 hours");
         return true;
-    }
-
-    public static boolean isValidFinishOption(int finishOption) {
-        return finishOption == 1 || finishOption == 2;
     }
 
     public static int getClassType() {
@@ -171,18 +159,7 @@ public class AirlineReservationsSystem {
         return classOption == 1 || classOption == 2;
     }
 
-    public static boolean allSeatsBooked(SetSeatStatus[] seats) {
-        for (int i = 0; i < seats.length; i++) {
-            if (seats[i] == SetSeatStatus.FALSE) {
-                return false;
-            }
-        }
-        System.out.println("Next flight leaves in 3 hours");
-        return true;
-    }
-
-
-    public static void showTypeClass(int classOption) {
+    public static void displayClassSeats(int classOption) {
         switch (classOption) {
             case 1:
                 System.out.println("The choose class is VIP;");
@@ -193,20 +170,86 @@ public class AirlineReservationsSystem {
         }
     }
 
+    public static void displaySeatAvaiable(SetSeatStatus[] seats, int classOption) {
+        if (classOption == 1) {
+            int vipLimitSeat = seats.length / 2;
 
+            System.out.println();
+            System.out.println("Avaiable seats on VIP class:");
+            for (int i = 0; i < vipLimitSeat; i++) {
+                System.out.printf("Seat %d: %s ", (i + 1), seats[i]);
 
-    public static void showSeatAvaiableClassVip(SetSeatStatus[] seats) {
-        int vipLimitSeat = seats.length / 2;
+                if (i % 2 == 1) { // controla quanto quebrar a linha
+                    System.out.println();
+                }
+            }
+        }
 
-        System.out.println("Avaiable seats on VIP class:");
-        for (int i = 0; i < vipLimitSeat; i++) {
-            System.out.printf("Seat %d: %s ", (i + 1), seats[i]);
+        if (classOption == 2) {
+            int firstEconomicSeat = seats.length / 2;
 
-            if (i % 2 == 1) { // controla quanto quebrar a linha
-                System.out.println();
+            System.out.println("Avaiable seats on Economic class:");
+            for (int i = firstEconomicSeat; i < seats.length; i++) {
+                System.out.printf("Seat %d: %s ", (i + 1), seats[i]);
+
+                if (i % 2 == 1) { // controla quanto quebrar a linha
+                    System.out.println();
+                }
             }
         }
     }
+
+    public static SetSeatStatus[] processReservation(SetSeatStatus[] seats, int classOption) {
+        SetSeatStatus[] temporarySeat = seats;
+
+        if (classOption == 1 && !vipClassFull(seats)) {
+            assignSeat();
+        }
+    }
+
+    public static boolean vipClassFull(SetSeatStatus[] seats) {
+        int firstVipSeat = 0;
+        int lastVipSeat = seats.length / 2;
+
+        for (int i = firstVipSeat; i < lastVipSeat; i++) {
+            if (seats[i] == SetSeatStatus.FALSE) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void assignSeat(SetSeatStatus[] seats, int seatNumber) {
+        seats[seatNumber - 1] = SetSeatStatus.TRUE;
+    }
+
+    public static boolean keepingReservation() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println();
+
+        System.out.println("Want finish the booking?");
+        System.out.println("Enter 1 to yes:");
+        System.out.println("Enter 2 to no:");
+        int finishOption = input.nextInt();
+
+        while (!isValidFinishOption(finishOption)) {
+            System.out.println("this option " + finishOption + " it's not allowed.");
+            System.out.println("Enter the number again.");
+            finishOption = input.nextInt();
+        }
+
+        if (finishOption == 1) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static boolean isValidFinishOption(int finishOption) {
+        return finishOption == 1 || finishOption == 2;
+    }
+
 
     public static void showSeatAvaiableClassEconomic(SetSeatStatus[] seats) {
         int economicFirstSeat = seats.length / 2 + 1;
@@ -252,17 +295,6 @@ public class AirlineReservationsSystem {
         return temporarySeatOption;
     }
 
-    public static boolean verifyClassVipStatus(SetSeatStatus[] seats) {
-        int firstVipSeat = 0;
-        int lastVipSeat = seats.length / 2;
-
-        for (int i = firstVipSeat; i < lastVipSeat; i++) {
-            if (seats[i] == SetSeatStatus.FALSE) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     public static boolean verifyClassEconomicStatus(SetSeatStatus[] seats) {
         int firstEconomicSeat = (seats.length / 2);
@@ -280,9 +312,7 @@ public class AirlineReservationsSystem {
         return seats[seatsOption - 1] == SetSeatStatus.FALSE;
     }
 
-    public static void assignSeat(int classOption, SetSeatStatus[] seats, int seatNumber) {
-        seats[seatNumber - 1] = SetSeatStatus.TRUE;
-    }
+
 
     public static void showSeatStatusError(int classOption) {
         System.out.println("This seat " + classOption + " is booked!");

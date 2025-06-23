@@ -226,11 +226,11 @@ public class AirlineReservationsSystem {
             if (!checkSeatStatus(seats, seat)) {
                 seats[seat - 1] = SetSeatStatus.TRUE;
             } else {
-                System.out.println("This seat is booked!");
-                System.out.println("enter a new seat:");
-                seat = input.nextInt();
-                int seat = input.nextInt();
-
+                while ((checkSeatStatus(seats, seat))) {
+                    System.out.println("This seat is booked!");
+                    System.out.println("enter a new seat:");
+                    seat = input.nextInt();
+                }
             }
         }
 

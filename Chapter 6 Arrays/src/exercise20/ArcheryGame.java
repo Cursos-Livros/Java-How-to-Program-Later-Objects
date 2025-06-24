@@ -45,21 +45,18 @@ public class ArcheryGame {
     }
 
     public static int getWinner(double[] total) {
-        int player = 0;
-        double tempTotal = 0;
-        double[] temporaryScore = total;
+        int maxPoint = 0;
+        //Assigning one array to another is an incorrect approach to copying arrays. It only creates a reference to the original array.
+        // If any changes are made to one array, it will reflect in the other since they both point to the same memory location.
+        // double[] temporaryScore = new double[total];
 
-        for (int i = 0; i < temporaryScore.length; i++) {
-            for (int j = i + 1; j < temporaryScore.length; j++) {
-                if (temporaryScore[j] > temporaryScore[i]) {
-                    tempTotal = temporaryScore[i];
-                    temporaryScore[i] = temporaryScore[j];
-                    temporaryScore[j] = tempTotal;
-                }
+        for (int i = 0; i < total.length; i++) {
+            if(total[i] > total[maxPoint]){
+                maxPoint = i;
             }
         }
 
-        return player;
+        return maxPoint;
     }
 
     public static void displayScore(double[][] score, double[] total, int winner) {
@@ -72,6 +69,6 @@ public class ArcheryGame {
         }
 
         System.out.println();
-        System.out.printf("the winner is player %d", winner + 1);
+        System.out.printf("the winner is player %d with %.2f points!", winner + 1, total[winner]);
     }
 }

@@ -55,7 +55,6 @@ public class ArcheryGame {
                     tempTotal = temporaryScore[i];
                     temporaryScore[i] = temporaryScore[j];
                     temporaryScore[j] = tempTotal;
-                    player = j;
                 }
             }
         }

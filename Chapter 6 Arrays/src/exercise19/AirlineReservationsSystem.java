@@ -224,10 +224,13 @@ public class AirlineReservationsSystem {
             }
 
             if (!checkSeatStatus(seats, seat)) {
-                seat = handleSeatReservation(seats, seat);
                 seats[seat - 1] = SetSeatStatus.TRUE;
             } else {
-                seats[seat - 1] = SetSeatStatus.TRUE;
+                System.out.println("This seat is booked!");
+                System.out.println("enter a new seat:");
+                seat = input.nextInt();
+                int seat = input.nextInt();
+
             }
         }
 
@@ -241,26 +244,13 @@ public class AirlineReservationsSystem {
             }
 
             if (!checkSeatStatus(seats, seat)) {
-                seat = handleSeatReservation(seats, seat);
                 seats[seat - 1] = SetSeatStatus.TRUE;
             } else {
-                seats[seat - 1] = SetSeatStatus.TRUE;
+                System.out.println("This seat is booked!");
             }
         }
 
         return seats;
-    }
-
-    public static int handleSeatReservation(SetSeatStatus[] seats, int seat) {
-        Scanner input = new Scanner(System.in);
-
-        while (!checkSeatStatus(seats, seat)) {
-            System.out.println("This seat is booked!");
-            System.out.println("enter a new seat:");
-            seat = input.nextInt();
-        }
-
-        return seat;
     }
 
     public static boolean validateSeatForClass(int classOption, int seat, SetSeatStatus[] seats) {
@@ -274,7 +264,7 @@ public class AirlineReservationsSystem {
     }
 
     public static boolean checkSeatStatus(SetSeatStatus[] seats, int seat) {
-        return seats[seat - 1] == SetSeatStatus.FALSE;
+        return seats[seat - 1] == SetSeatStatus.TRUE;
     }
 
     public static boolean keepingReservation() {

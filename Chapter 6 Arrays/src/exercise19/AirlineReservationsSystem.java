@@ -229,7 +229,6 @@ public class AirlineReservationsSystem {
                 System.out.println("This seat is booked!");
                 System.out.println("enter a new seat:");
                 seat = input.nextInt();
-                int seat = input.nextInt();
 
             }
         }

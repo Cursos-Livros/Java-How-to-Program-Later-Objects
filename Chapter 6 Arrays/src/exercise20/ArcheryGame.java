@@ -9,7 +9,7 @@ public class ArcheryGame {
 
     public static void run() {
         double[][] score = new double[4][3];
-        double[] total = new double[4];
+        double[] total;
 
         score = getScore(score);
         total = calculateTotal(score);

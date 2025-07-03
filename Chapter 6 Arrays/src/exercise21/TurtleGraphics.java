@@ -80,8 +80,8 @@ public class TurtleGraphics {
 
     public static void showFloor(int[][] floor) {
 
-        for (int i = 0; i < floor.length; i++) {
-            for(int j=0; j< floor.length; j++){
+        for (int i = 0; i < floor.leth; i++) {
+            for(int j=0; j< floor[i].length; j++){
                 System.out.printf(floor[i][j] + "  ");
             }
             System.out.println();

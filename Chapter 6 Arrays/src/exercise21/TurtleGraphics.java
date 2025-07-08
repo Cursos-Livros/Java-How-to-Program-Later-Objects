@@ -38,10 +38,11 @@ public class TurtleGraphics {
                     currentDirection = turnLeft(currentDirection);
                     break;
                 case 5:
-                    moveFoward(currentDirection, currentPositionY, currentPositionX, floor);
+                    currentPositionX = moveFoward(currentDirection, currentPositionX, currentPositionY, floor);
+                    currentPositionY = moveFoward(currentDirection, currentPositionX, currentPositionY, floor);
                     break;
                 case 6:
-                    showFloor(floor);
+                    showFloor(floor, currentPositionX, currentPositionY);
                     break;
                 case 9:
                     exit = 1;
@@ -97,24 +98,23 @@ public class TurtleGraphics {
         return (currentDirection - 1 + 4) % 4;
     }
 
-    public static void moveFoward(int currentDirection, int currentPositionX, int currentPositionY, int[][] floor) {
-        int tempX = currentPositionX;
-        int tempY = currentPositionY;
-        switch (currentDirection) {
-            case 1, 3:
-                floor[tempX++][currentPositionY] = 1;
-                break;
-            case 2, 4:
-                floor[currentPositionX][currentPositionY++] = 1;
-                break;
-        }
+    public static int moveFoward(int currentDirection, int currentPositionX, int currentPositionY, int[][] floor) {
+        int pass = 0;
+        return switch (currentDirection) {
+            case 1, 3 -> currentPositionX++;
+            case 2, 4 -> currentPositionY++;
+            default ->0;
+        };
     }
 
-    public static void showFloor(int[][] floor) {
+    public static void showFloor(int[][] floor, int currentX, int currentY) {
 
         for (int i = 0; i < floor.length; i++) {
             for (int j = 0; j < floor[i].length; j++) {
                 System.out.printf(floor[i][j] + "  ");
+                if (i == currentX && j == currentY) {
+                    floor[i][j] = 1;
+                }
             }
             System.out.println();
         }

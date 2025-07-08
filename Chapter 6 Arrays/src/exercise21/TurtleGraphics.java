@@ -12,6 +12,8 @@ public class TurtleGraphics {
         int[][] floor = new int[20][20];
         int currentCommand = 0;
         int currentDirection = 0;
+        int currentPositionY = 0;
+        int currentPositionX = 0
         int exitOption = 1;
         int penStatus = 0;
         char turtle = 'T';
@@ -21,7 +23,24 @@ public class TurtleGraphics {
         showMenu();
 
         currentCommand = commandOption(input, currentCommand);
-        switch ()
+
+        switch (currentCommand) {
+            case 1:
+                penStatus = penUp();
+                break;
+            case 2:
+                penStatus = penDown();
+                break;
+            case 3:
+                currentDirection = turnRight(currentDirection);
+                break;
+            case 4:
+                currentDirection = turnLeft(currentDirection);
+                break;
+            case 5:
+                moveFoward(currentDirection, currentPositionX, currentPositionY, floor);
+                break;
+        }
 
 //            showFloor(floor);
 //            System.out.printf("You are in the position (%d,%d): %n", floor[0][0], floor[0][0]);
@@ -68,6 +87,18 @@ public class TurtleGraphics {
         return currentCommand >= 1 && currentCommand <= 6 || currentCommand == 9;
     }
 
+    public static int penUp() {
+        return 1;
+    }
+
+    public static int penDown() {
+        return 1;
+    }
+
+    public static void moveFoward(int currentDirection, int currentPositionX, int currentPositionY, int[][] floor) {
+
+    }
+
     public static boolean exit(int exitOption) {
         return exitOption == 0;
     }
@@ -91,8 +122,12 @@ public class TurtleGraphics {
         return direction == 1 || direction == 2;
     }
 
-    public static int changeDirection(int newDirection, int currentDirection) {
-        return newDirection == 0 ? (currentDirection + 1) % 4 : (currentDirection - 1 + 4) % 4; // Modular Aritmethic
+    public static int turnRight(int currentDirection) {
+        return (currentDirection + 1) % 4; // Modular Aritmethic
+    }
+
+    public static int turnLeft(int currentDirection) {
+        return (currentDirection - 1 + 4) % 4;
     }
 
     public static String showCurretDirection(int currentDirection) {

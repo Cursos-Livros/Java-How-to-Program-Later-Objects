@@ -13,48 +13,42 @@ public class TurtleGraphics {
         int currentCommand = 0;
         int currentDirection = 0;
         int currentPositionY = 0;
-        int currentPositionX = 0
-        int exitOption = 1;
+        int currentPositionX = 0;
         int penStatus = 0;
         char turtle = 'T';
+        int exit = 0;
 
+        while (exit == 0) {
+            System.out.println("Menu");
+            showMenu();
 
-        System.out.println("Menu");
-        showMenu();
+            currentCommand = commandOption(input, currentCommand);
 
-        currentCommand = commandOption(input, currentCommand);
-
-        switch (currentCommand) {
-            case 1:
-                penStatus = penUp();
-                break;
-            case 2:
-                penStatus = penDown();
-                break;
-            case 3:
-                currentDirection = turnRight(currentDirection);
-                break;
-            case 4:
-                currentDirection = turnLeft(currentDirection);
-                break;
-            case 5:
-                moveFoward(currentDirection, currentPositionX, currentPositionY, floor);
-                break;
+            switch (currentCommand) {
+                case 1:
+                    penStatus = penUp();
+                    break;
+                case 2:
+                    penStatus = penDown();
+                    break;
+                case 3:
+                    currentDirection = turnRight(currentDirection);
+                    break;
+                case 4:
+                    currentDirection = turnLeft(currentDirection);
+                    break;
+                case 5:
+                    moveFoward(currentDirection, currentPositionY, currentPositionX, floor);
+                    break;
+                case 6:
+                    showFloor(floor);
+                    break;
+                case 9:
+                    exit = 1;
+                    break;
+            }
         }
 
-//            showFloor(floor);
-//            System.out.printf("You are in the position (%d,%d): %n", floor[0][0], floor[0][0]);
-//            System.out.println("and your direction is: " + showCurretDirection(currentDirection));
-//
-//            System.out.println("Enter with a direction:");
-//            int newDirection = chooseDirection(input);
-//            currentDirection = changeDirection(newDirection, currentDirection);
-//            System.out.println("Your new direction is: " + showCurretDirection(currentDirection));
-//
-//            System.out.println("You desire turn on the pen?");
-//            penStatus = penOption(penStatus, input);
-//
-//            System.out.println("Continue:");
 
     }
 
@@ -92,34 +86,7 @@ public class TurtleGraphics {
     }
 
     public static int penDown() {
-        return 1;
-    }
-
-    public static void moveFoward(int currentDirection, int currentPositionX, int currentPositionY, int[][] floor) {
-
-    }
-
-    public static boolean exit(int exitOption) {
-        return exitOption == 0;
-    }
-
-    public static int chooseDirection(Scanner input) {
-
-        int direction = input.nextInt();
-
-        while (!testDirection(direction)) {
-            System.out.println("The direction is out of range:");
-            System.out.println("Enter the direction again!");
-            System.out.print("1 = Right → \n");
-            System.out.print("2 = Left ← \n");
-            direction = input.nextInt();
-        }
-
-        return direction - 1;
-    }
-
-    public static boolean testDirection(int direction) {
-        return direction == 1 || direction == 2;
+        return 0;
     }
 
     public static int turnRight(int currentDirection) {
@@ -130,40 +97,17 @@ public class TurtleGraphics {
         return (currentDirection - 1 + 4) % 4;
     }
 
-    public static String showCurretDirection(int currentDirection) {
-        String direction = "";
-
+    public static void moveFoward(int currentDirection, int currentPositionX, int currentPositionY, int[][] floor) {
+        int tempX = currentPositionX;
+        int tempY = currentPositionY;
         switch (currentDirection) {
-            case 0:
-                direction = "North";
+            case 1, 3:
+                floor[tempX++][currentPositionY] = 1;
                 break;
-            case 1:
-                direction = "East";
-                break;
-            case 2:
-                direction = "South";
-                break;
-            case 3:
-                direction = "West";
+            case 2, 4:
+                floor[currentPositionX][currentPositionY++] = 1;
                 break;
         }
-
-        return direction;
-    }
-
-    public static int penOption(int penStatus, Scanner input) {
-        penStatus = input.nextInt();
-
-        while (!checkPenOption(penStatus)) {
-            System.out.println("This option " + penStatus + "it's not permmited");
-            System.out.println("Enter 1 or 0:");
-            penStatus = input.nextInt();
-        }
-        return penStatus;
-    }
-
-    public static boolean checkPenOption(int penStatus) {
-        return penStatus == 1 || penStatus == 0;
     }
 
     public static void showFloor(int[][] floor) {

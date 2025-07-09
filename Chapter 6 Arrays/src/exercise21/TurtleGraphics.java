@@ -109,10 +109,12 @@ public class TurtleGraphics {
         }
 
         // Moves one to forward and create the east limit forward
-        if (currentDirection == 3 && (currentX - 1) >= 0) {
-            return -1;
-        } else {
-            System.out.println("This movement it's between the limits of floor for the west side!");
+        if (currentDirection == 3) {
+            if ((currentX - 1) >= 0) {
+                return -1;
+            } else {
+                System.out.println("This movement it's between the limits of floor for the west side!");
+            }
         }
 
         return 0;
@@ -120,18 +122,23 @@ public class TurtleGraphics {
 
     public static int moveForwardY(int currentDirection, int currentY, int[][] floor) {
         // Moves one to forward and create the north limit forward
-        if (currentDirection == 0 && (currentY - 1) >= 0) {
-            return -1;
-        } else {
-            System.out.println("This movement it's between the limits of floor for the North side!");
+        if (currentDirection == 0) {
+            if ((currentY - 1) >= 0) {
+                return -1;
+            } else {
+                System.out.println("This movement it's between the limits of floor for the North side!");
+            }
         }
 
         // Moves one to forward and create the south limit forward
-        if (currentDirection == 2 && (currentY + 1) < floor.length) {
-            return 1;
-        } else {
-            System.out.println("This movement it's between the limits of floor for the South side!");
+        if (currentDirection == 2) {
+            if ((currentY + 1) < floor.length) {
+                return 1;
+            } else {
+                System.out.println("This movement it's between the limits of floor for the South side!");
+            }
         }
+
         return 0;
     }
 

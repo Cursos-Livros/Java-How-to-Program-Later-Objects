@@ -38,8 +38,8 @@ public class TurtleGraphics {
                     currentDirection = turnLeft(currentDirection);
                     break;
                 case 5:
-                    currentPositionX += moveFowardX(currentDirection, currentPositionX, floor);
-                    currentPositionY += moveFowardY(currentDirection, currentPositionY, floor);
+                    currentPositionX += moveForwardX(currentDirection, currentPositionX, floor);
+                    currentPositionY += moveForwardY(currentDirection, currentPositionY, floor);
                     break;
                 case 6:
                     showFloor(floor, currentPositionX, currentPositionY, penStatus);
@@ -98,22 +98,39 @@ public class TurtleGraphics {
         return (currentDirection - 1 + 4) % 4;
     }
 
-    public static int moveFowardX(int currentDirection, int currentX, int[][] floor) {
-        if (currentDirection == 1 && (currentX + 1) < floor[0].length) {
-            return 1;
+    public static int moveForwardX(int currentDirection, int currentX, int[][] floor) {
+        // Moves one to forward and create the east limit forward
+        if (currentDirection == 1) {
+            if ((currentX + 1) < floor[0].length) {
+                return 1;
+            } else {
+                System.out.println("This movement it's between the limits of floor for the east side!");
+            }
         }
+
+        // Moves one to forward and create the east limit forward
         if (currentDirection == 3 && (currentX - 1) >= 0) {
             return -1;
+        } else {
+            System.out.println("This movement it's between the limits of floor for the west side!");
         }
+
         return 0;
     }
 
-    public static int moveFowardY(int currentDirection, int currentY, int[][] floor) {
+    public static int moveForwardY(int currentDirection, int currentY, int[][] floor) {
+        // Moves one to forward and create the north limit forward
         if (currentDirection == 0 && (currentY - 1) >= 0) {
             return -1;
+        } else {
+            System.out.println("This movement it's between the limits of floor for the North side!");
         }
+
+        // Moves one to forward and create the south limit forward
         if (currentDirection == 2 && (currentY + 1) < floor.length) {
             return 1;
+        } else {
+            System.out.println("This movement it's between the limits of floor for the South side!");
         }
         return 0;
     }

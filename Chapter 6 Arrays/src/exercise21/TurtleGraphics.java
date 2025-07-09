@@ -9,7 +9,7 @@ public class TurtleGraphics {
 
     public static void run() {
         Scanner input = new Scanner(System.in);
-        int[][] floor = new int[20][20];
+        int[][] floor = new int[10][10];
         int currentCommand = 0;
         int currentDirection = 0;
         int currentPositionY = 0;
@@ -38,11 +38,11 @@ public class TurtleGraphics {
                     currentDirection = turnLeft(currentDirection);
                     break;
                 case 5:
-                    currentPositionX = moveFoward(currentDirection, currentPositionX, currentPositionY, floor);
-                    currentPositionY = moveFoward(currentDirection, currentPositionX, currentPositionY, floor);
+                    currentPositionX += moveFowardX(currentDirection, currentPositionX, floor);
+                    currentPositionY += moveFowardY(currentDirection, currentPositionY, floor);
                     break;
                 case 6:
-                    showFloor(floor, currentPositionX, currentPositionY);
+                    showFloor(floor, currentPositionX, currentPositionY, penStatus);
                     break;
                 case 9:
                     exit = 1;
@@ -98,23 +98,37 @@ public class TurtleGraphics {
         return (currentDirection - 1 + 4) % 4;
     }
 
-    public static int moveFoward(int currentDirection, int currentPositionX, int currentPositionY, int[][] floor) {
-        int pass = 0;
-        return switch (currentDirection) {
-            case 1, 3 -> currentPositionX++;
-            case 2, 4 -> currentPositionY++;
-            default ->0;
-        };
+    public static int moveFowardX(int currentDirection, int currentX, int[][] floor) {
+        if (currentDirection == 1 && (currentX + 1) < floor[0].length) {
+            return 1;
+        }
+        if (currentDirection == 3 && (currentX - 1) >= 0) {
+            return -1;
+        }
+        return 0;
     }
 
-    public static void showFloor(int[][] floor, int currentX, int currentY) {
+    public static int moveFowardY(int currentDirection, int currentY, int[][] floor) {
+        if (currentDirection == 0 && (currentY - 1) >= 0) {
+            return -1;
+        }
+        if (currentDirection == 2 && (currentY + 1) < floor.length) {
+            return 1;
+        }
+        return 0;
+    }
+
+    public static void showFloor(int[][] floor, int currentX, int currentY, int penStatus) {
 
         for (int i = 0; i < floor.length; i++) {
             for (int j = 0; j < floor[i].length; j++) {
-                System.out.printf(floor[i][j] + "  ");
-                if (i == currentX && j == currentY) {
-                    floor[i][j] = 1;
+                if (i == currentY && j == currentX) {
+                    if (penStatus == 1) {
+                        floor[i][j] = 1;
+                    }
+                    System.out.println(-1);
                 }
+                System.out.print("  ");
             }
             System.out.println();
         }

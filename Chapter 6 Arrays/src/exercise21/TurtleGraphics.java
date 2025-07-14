@@ -9,14 +9,18 @@ public class TurtleGraphics {
 
     public static void run() {
         Scanner input = new Scanner(System.in);
-        int[][] floor = new int[10][10];
+        Character[][] floor = new Character[10][10];
         int currentCommand = 0;
         int currentDirection = 0;
         int currentPositionY = 0;
         int currentPositionX = 0;
+        int lastPositionX = 0;
+        int lastPositionY = 0;
         int penStatus = 0;
         char turtle = 'T';
         int exit = 0;
+
+        initiateFloor(floor);
 
         while (exit == 0) {
             System.out.println("Menu");
@@ -38,11 +42,14 @@ public class TurtleGraphics {
                     currentDirection = turnLeft(currentDirection);
                     break;
                 case 5:
+                    lastPositionX = currentPositionX;
+                    lastPositionY = currentPositionY;
                     currentPositionX += moveForwardX(currentDirection, currentPositionX, floor);
                     currentPositionY += moveForwardY(currentDirection, currentPositionY, floor);
+                    positionateElements(floor, lastPositionX, lastPositionY, currentPositionX, currentPositionY, penStatus, turtle);
                     break;
                 case 6:
-                    showFloor(floor, currentPositionX, currentPositionY, penStatus);
+                    showFloor(floor);
                     break;
                 case 9:
                     exit = 1;
@@ -51,6 +58,14 @@ public class TurtleGraphics {
         }
 
 
+    }
+
+    public static void initiateFloor(Character[][] floor) {
+        for (int i = 0; i < floor.length; i++) {
+            for (int j = 0; j < floor[i].length; j++) {
+                floor[i][j] = ' ';
+            }
+        }
     }
 
     public static void showMenu() {
@@ -83,11 +98,11 @@ public class TurtleGraphics {
     }
 
     public static int penUp() {
-        return 1;
+        return 0;
     }
 
     public static int penDown() {
-        return 0;
+        return 1;
     }
 
     public static int turnRight(int currentDirection) {
@@ -98,7 +113,8 @@ public class TurtleGraphics {
         return (currentDirection - 1 + 4) % 4;
     }
 
-    public static int moveForwardX(int currentDirection, int currentX, int[][] floor) {
+    // Verificar o por que quando avança no Y ele recomeça na linha
+    public static int moveForwardX(int currentDirection, int currentX, Character[][] floor) {
         // Moves one to forward and create the east limit forward
         if (currentDirection == 1) {
             if ((currentX + 1) < floor[0].length) {
@@ -120,7 +136,7 @@ public class TurtleGraphics {
         return 0;
     }
 
-    public static int moveForwardY(int currentDirection, int currentY, int[][] floor) {
+    public static int moveForwardY(int currentDirection, int currentY, Character[][] floor) {
         // Moves one to forward and create the north limit forward
         if (currentDirection == 0) {
             if ((currentY - 1) >= 0) {
@@ -142,19 +158,52 @@ public class TurtleGraphics {
         return 0;
     }
 
-    public static void showFloor(int[][] floor, int currentX, int currentY, int penStatus) {
+    public static void positionateElements(Character[][] floor, int lastPositionX, int lastPositionY, int currentX,
+                                           int currentY, int penStatus, char turtle) {
 
-        for (int i = 0; i < floor.length; i++) {
-            for (int j = 0; j < floor[i].length; j++) {
-                if (i == currentY && j == currentX) {
-                    if (penStatus == 1) {
-                        floor[i][j] = 1;
-                    }
-                    System.out.println(-1);
-                }
-                System.out.print("  ");
+        // Just use * if position is more than 0 on X
+        if (penStatus == penDown()) {
+            floor[lastPositionY][lastPositionX] = '*';
+        }
+        if (penStatus == penUp()) {
+            floor[lastPositionY][lastPositionX] = ' ';
+        }
+        floor[currentY][currentX] = turtle;
+
+        System.out.printf("Turtle is now at (%d, %d)\n", currentX, currentY);
+    }
+
+    public static void showFloor(Character[][] floor) {
+        showHead(floor);
+        showSeparatesLine(floor);
+
+        for (int row = 0; row < floor.length; row++) {
+            System.out.printf("%2d |", row);
+            for (int col = 0; col < floor[row].length; col++) {
+                System.out.printf(" %c ", floor[row][col]);
             }
             System.out.println();
         }
     }
+
+    public static void showHead(Character[][] floor) {
+        // Cabeçalho das colunas
+        System.out.print("    "); // espaço para alinhar com os índices de linha
+        for (int col = 0; col < floor[0].length; col++) {
+            System.out.printf("%2d ", col);
+        }
+        System.out.println();
+    }
+
+    public static void showSeparatesLine(Character[][] floor) {
+        // Linha horizontal separadora
+        System.out.print("   +");
+        for (int col = 0; col < floor[0].length; col++) {
+            System.out.print("---");
+        }
+        System.out.println();
+    }
 }
+
+
+

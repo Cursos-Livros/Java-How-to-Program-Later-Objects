@@ -2,6 +2,22 @@ package exercise21;
 
 import java.util.Scanner;
 
+//Em Turtle Graphics (gráficos)
+//Turtle (como na biblioteca StdDraw, TurtleGraphics ou Processing) geralmente desenha usando coordenadas cartesianas (x, y), como em gráficos matemáticos:
+//
+// (x →) horizontal → coluna
+// (y ↓) vertical   ↓ linha
+// Ou seja:
+//
+//  x = coluna
+//  y = linha
+//
+// Por isso, na hora de desenhar, você costuma inverter:
+// grid[coluna][linha] — ou grid[x][y] — porque a ordem esperada pela função gráfica é essa!
+
+// Quando estiver com gráficos ou mapas, pense em:
+// Posição no plano → x antes de y
+
 public class TurtleGraphics {
     public static void main(String[] args) {
         run();

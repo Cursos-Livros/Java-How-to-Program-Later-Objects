@@ -46,6 +46,7 @@ public class TurtleGraphics {
                     lastPositionY = currentPositionY;
                     currentPositionX += moveForwardX(currentDirection, currentPositionX, floor);
                     currentPositionY += moveForwardY(currentDirection, currentPositionY, floor);
+                    // This method is here too can T -> * or ||
                     positionateElements(floor, lastPositionX, lastPositionY, currentPositionX, currentPositionY, penStatus, turtle);
                     break;
                 case 6:
@@ -161,13 +162,13 @@ public class TurtleGraphics {
     public static void positionateElements(Character[][] floor, int lastPositionX, int lastPositionY, int currentX,
                                            int currentY, int penStatus, char turtle) {
 
-        // Just use * if position is more than 0 on X
-        if (penStatus == penDown()) {
-            floor[lastPositionY][lastPositionX] = '*';
-        }
-        if (penStatus == penUp()) {
-            floor[lastPositionY][lastPositionX] = ' ';
-        }
+            if (penStatus == penDown()) {
+                floor[lastPositionY][lastPositionX] = '*';
+            }
+            if (penStatus == penUp()) {
+                floor[lastPositionY][lastPositionX] = ' ';
+            }
+
         floor[currentY][currentX] = turtle;
 
         System.out.printf("Turtle is now at (%d, %d)\n", currentX, currentY);

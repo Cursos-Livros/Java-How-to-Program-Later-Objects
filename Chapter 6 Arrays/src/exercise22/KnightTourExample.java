@@ -13,8 +13,8 @@ public class KnightTourExample {
         board[row][column] = knight;
         int[] nextMove = new int[2];
 
-        for (int i = 0; i < 10; i++) {
-            nextMove = getNextMove(horizontal, vertical, row, column, knight, board);
+        for (int i = 0; i < 50; i++) {
+                nextMove = getNextMove(horizontal, vertical, row, column, knight, board);
 
             if (nextMove != null) {
                 row = nextMove[0];
@@ -46,7 +46,7 @@ public class KnightTourExample {
     public static void showBoard(int[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                System.out.printf("%d ", board[i][j]);
+                System.out.printf("%d   ", board[i][j]);
             }
             System.out.println();
         }

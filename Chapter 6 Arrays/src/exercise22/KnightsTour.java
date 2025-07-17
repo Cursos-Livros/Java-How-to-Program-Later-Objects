@@ -12,28 +12,48 @@ public class KnightsTour {
     }
 
     public static void run() {
-        SecureRandom typeOption = new SecureRandom();
 
         int[][] chessboard = new int[8][8];
         int[] horizontalMove = {2, 1, -1, -2, -2, -1, 1, 2};
         int[] verticalMove = {-1, -2, -2, -1, 1, 2, 2, 1};
         int currentRow = 0;
         int currentColumn = 0;
-        int counter = 1;
+        int knight = 1;
 
-        int typoMove = typeOption.nextInt(7);
+        chessboard[currentRow][currentColumn] = knight;
 
-        currentRow += getHorizontalMove(horizontalMove, typoMove);
-        currentColumn += getVerticalMove(verticalMove, typoMove);
+        boolean moved;
 
-        while (!isPossible(chessboard, currentRow, currentColumn, counter)) {
-            currentRow += getHorizontalMove(horizontalMove, typoMove);
-            currentColumn += getVerticalMove(verticalMove, typoMove);
+        // Counter if knight touch 64 squares
+        while (knight < 64) {
+            moved = false;
+
+            for (int move = 0; move < chessboard.length; move++) {
+                int nextRow = currentRow + getVerticalMove(verticalMove, move);
+                int nextColumn = currentColumn + getHorizontalMove(horizontalMove, move);
+
+                if (isPossible(chessboard, nextRow, nextColumn)) {
+                    currentRow = nextRow;
+                    currentColumn = nextColumn;
+                    knight++;
+                    realizeMovement(chessboard, currentRow, currentColumn, knight);
+                    moved = true;
+                    break;
+                }
+            }
+
+            // Control to verify if has not any movement
+            if (!moved) {
+                break;
+            }
+
         }
-        realizeMovement(chessboard, currentRow, currentColumn, counter);
-        counter++;
+        showBoard(chessboard);
+        showStatus(knight);
+    }
 
-
+    public static boolean maximumMove(int playNumber) {
+        return playNumber > 64;
     }
 
     public static int getHorizontalMove(int[] horizontalMove, int typeMove) {
@@ -44,20 +64,25 @@ public class KnightsTour {
         return verticalMove[typeMove];
     }
 
-    public static boolean isPossible(int[][] chessboard, int currentRow, int currentColumn, int counter) {
-        if (currentRow < 0 || currentRow > chessboard.length) {
-            return false;
-        }
-
-        if (currentColumn < 0 || currentColumn > chessboard.length) {
-            return false;
-        }
-
-        return chessboard[currentRow][currentColumn] != 0;
+    public static boolean isPossible(int[][] chessboard, int currentRow, int currentColumn) {
+        return ((currentRow >= 0 && currentRow < chessboard.length) && (currentColumn >= 0 && currentColumn < chessboard.length) && (chessboard[currentRow][currentColumn] == 0));
     }
 
-    public static void realizeMovement(int[][] chessboard, int currentRow, int currentColumn, int counter) {
-        chessboard[currentRow][currentColumn] = counter;
+    public static void realizeMovement(int[][] chessboard, int currentRow, int currentColumn, int knight) {
+        chessboard[currentRow][currentColumn] = knight;
+    }
+
+    public static void showBoard(int[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                System.out.printf("%d ", board[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void showStatus(int numberPlays) {
+        System.out.printf("the knight complete %d tours!", numberPlays);
     }
 }
 

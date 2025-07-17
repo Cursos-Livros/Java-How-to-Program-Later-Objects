@@ -29,10 +29,12 @@ public class KnightTourExample {
     }
 
     public static int[] getNextMove(int[] horizontal, int[] vertical, int row, int column, int knight, int[][] board) {
+        // From the current position generates a new types of movements
         for (int i = 0; i < horizontal.length; i++) {
             int newRow = row + vertical[i];
             int newColumn = column + horizontal[i];
 
+            // Just move if this rules its corrects
             if ((newRow >= 0 && newRow < board.length) && (newColumn >= 0 && newColumn < board.length) && board[newRow][newColumn] == 0) {
                 return new int[]{newRow, newColumn};
             }

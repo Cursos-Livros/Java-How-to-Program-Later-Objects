@@ -22,11 +22,13 @@ public class KnightsTour {
 
         chessboard[currentRow][currentColumn] = knight;
 
-        boolean moved;
+        boolean moved ;
 
         // Counter if knight touch 64 squares
         while (knight < 64) {
-            moved = false;
+//            If the value needs to reset or restart on each iteration, declare it inside the loop.
+//            If it needs to accumulate or persist, declare it outside the loop.
+            moved = false; // Restart the variable after a movement
 
             for (int move = 0; move < chessboard.length; move++) {
                 int nextRow = currentRow + getVerticalMove(verticalMove, move);
